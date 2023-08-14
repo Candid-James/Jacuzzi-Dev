@@ -1,5 +1,13 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 0.0.1
+
+### Patch Changes
+
+- 2d4265b: Added swiper.js
+- 56bcbfe: Fixed build js
+- fec928c: Fixed build.js file
+
 ## 2.0.0
 
 ### Major Changes
