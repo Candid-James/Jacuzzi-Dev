@@ -9,12 +9,12 @@ const PRODUCTION = process.env.NODE_ENV === 'production';
 // Config entrypoint files
 const ENTRY_POINTS = [
   'src/404Ajax.ts',
-  'featuredItemSlider.ts',
-  'footer.js',
-  'forms.ts',
-  'navHotTubs.js',
-  'productPageDealer.ts',
-  'sliderAnimation.js',
+  'src/featuredItemSlider.ts',
+  'src/footer.js',
+  'src/forms.ts',
+  'src/navHotTubs.js',
+  'src/productPageDealer.ts',
+  'src/sliderAnimation.js',
 ];
 
 // Config dev serving
