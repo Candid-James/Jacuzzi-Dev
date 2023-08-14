@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
   "name": "@candid-james-battye/jacuzzi-dev",
   "version": "0.0.0",
-=======
-  "name": "@candid-james-batte/jacuzzi-dev",
-  "version": "2.0.0",
->>>>>>> c481437da17931e534a49844b4d0e8a234843945
   "description": "Developer starter template for Finsweet projects.",
   "homepage": "https://github.com/finsweet/developer-starter#readme",
   "license": "ISC",
