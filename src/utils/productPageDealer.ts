@@ -3,8 +3,8 @@ const salesforceAPIKey = '';
 fetch('https://api.ipapi.com/check?access_key=YOUR_API_KEY')
   .then((response) => response.json())
   .then((data) => {
-    let latitude = data.latitude;
-    let longitude = data.longitude;
+    const { latitude } = data;
+    const { longitude } = data;
 
     // Call the function to get dealer info
     getDealerInfo(latitude, longitude);

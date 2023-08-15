@@ -1,5 +1,6 @@
-const salesForceURL: string = 'https://jacuzzibrands--uat.sandbox.my.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
-const oldURL: string = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8'
+const salesForceURL: string =
+  'https://jacuzzibrands--uat.sandbox.my.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+const oldURL: string = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
 
 const form = document.getElementById('salesforceForm') as HTMLFormElement;
 
@@ -16,18 +17,25 @@ button?.addEventListener('click', function (e: MouseEvent) {
     zipCode: (document.getElementById('PostalCode') as HTMLInputElement)?.value ?? 'null',
     country: (document.getElementById('CountryCode') as HTMLInputElement)?.value ?? 'null',
     reasonIntendedUse: (document.getElementById('Usage__c') as HTMLInputElement)?.value ?? 'null',
-    comments: (document.getElementById('Trade_In_Comments__c') as HTMLInputElement)?.value ?? 'null',
+    comments:
+      (document.getElementById('Trade_In_Comments__c') as HTMLInputElement)?.value ?? 'null',
     salesAlerts: (document.getElementById('Sale_Alert__c') as HTMLInputElement)?.checked ?? false,
-    productInterest: (document.getElementById('Product_Name__c') as HTMLInputElement)?.value ?? 'null',
-    contactPreference: (document.getElementById('Contact_Preference__c') as HTMLInputElement)?.value ?? 'null',
-    brand_interest: (document.getElementById('Brand_Interest__c') as HTMLInputElement)?.value ?? 'null',
-    Product_Family__c: (document.getElementById('Product_Family__c') as HTMLInputElement)?.value ?? 'null',
+    productInterest:
+      (document.getElementById('Product_Name__c') as HTMLInputElement)?.value ?? 'null',
+    contactPreference:
+      (document.getElementById('Contact_Preference__c') as HTMLInputElement)?.value ?? 'null',
+    brand_interest:
+      (document.getElementById('Brand_Interest__c') as HTMLInputElement)?.value ?? 'null',
+    Product_Family__c:
+      (document.getElementById('Product_Family__c') as HTMLInputElement)?.value ?? 'null',
     Is_PPC: (document.getElementById('Is_PPC_Campaign__c') as HTMLInputElement)?.value ?? 'null',
     Language__c: (document.getElementById('Language__c') as HTMLInputElement)?.value ?? 'null',
-    Lead_Category__c: (document.getElementById('Lead_Category__c') as HTMLInputElement)?.value ?? 'null',
+    Lead_Category__c:
+      (document.getElementById('Lead_Category__c') as HTMLInputElement)?.value ?? 'null',
     Lead_Source: (document.getElementById('LeadSource') as HTMLInputElement)?.value ?? 'null',
     Lead_Type__c: (document.getElementById('Lead_Type__c') as HTMLInputElement)?.value ?? 'null',
-    Product_Type__c: (document.getElementById('Product_Type__c') as HTMLInputElement)?.value ?? 'null',
+    Product_Type__c:
+      (document.getElementById('Product_Type__c') as HTMLInputElement)?.value ?? 'null',
   };
 
   // Convert formData values to strings
@@ -46,9 +54,8 @@ button?.addEventListener('click', function (e: MouseEvent) {
     .then(function (response: Response) {
       if (response.ok) {
         return response.text();
-      } else {
-        throw new Error('Network response was not ok.');
       }
+      throw new Error('Network response was not ok.');
     })
     .then(function (data: string) {
       console.log(data);
