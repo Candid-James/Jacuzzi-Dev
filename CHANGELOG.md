@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.0.1
+
+### Patch Changes
+
+- dabef83: adjusted 404 code
+
 ## 1.0.0
 
 ### Major Changes
