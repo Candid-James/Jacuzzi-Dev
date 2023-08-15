@@ -36,9 +36,9 @@ function fetchAndAppendElement() {
     console.error('An error occurred while fetching and appending the featured products:', error);
   }
 }
+fetchAndAppendElement();
 
 // Call the fetchAndAppendElement function when the page has finished loading
 window.addEventListener('DOMContentLoaded', function () {
-  fetchAndAppendElement();
   featureItemSlider();
 });
