@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.0.2
+
+### Patch Changes
+
+- 5c34113: Adjusted nav
+
 ## 1.0.1
 
 ### Patch Changes
