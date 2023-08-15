@@ -75,6 +75,17 @@ function showSecondLayer() {
   showBackButton();
 }
 
+if (window.innerWidth < 767) {
+  const triggers = document.querySelectorAll('.footer_dropdown-trigger');
+
+  triggers.forEach((e) => {
+    e.addEventListener('click', (e) => {
+      const wrapper = e.currentTarget;
+      wrapper.classList.toggle('is-active');
+    });
+  });
+}
+
 function handleBackButton() {
   if (wrapper.classList.contains('layer-two')) {
     hideLayerTwo();
@@ -87,6 +98,17 @@ function handleBackButton() {
     secondLayer.classList.remove('hide');
   }
 }
+
+// Copyright Year Script
+
+const footerYearElement = document.querySelector('.footer_year');
+const currentYear = new Date().getFullYear();
+
+if (footerYearElement) {
+  footerYearElement.innerHTML = currentYear;
+}
+
+// End of Copyright Year Script
 
 function handleCloseButton() {
   hideLayerTwo();

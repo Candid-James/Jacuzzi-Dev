@@ -1,4 +1,4 @@
-import { featureItemSlider } from 'src/utils/featuredItemSlider.mjs';
+import { featureItemSlider } from 'src/utils/featuredItemSlider.js';
 
 // Retrieve a specific element from another page and append it to the current page
 function fetchAndAppendElement() {
@@ -39,6 +39,6 @@ function fetchAndAppendElement() {
 
 // Call the fetchAndAppendElement function when the page has finished loading
 window.addEventListener('DOMContentLoaded', function () {
-  fetchAndAppendElement;
-  featureItemSlider;
+  fetchAndAppendElement();
+  featureItemSlider();
 });

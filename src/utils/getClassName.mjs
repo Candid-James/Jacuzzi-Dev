@@ -1,4 +1,4 @@
-export function getFirstWord(element: HTMLElement): string {
+export function getFirstWord(element) {
   let str = element.className;
   // Trim any leading or trailing spaces from the string
   str = str.trim();
