@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.0.3
+
+### Patch Changes
+
+- 0cc2687: Added mutationobserver to nav code
+
 ## 1.0.2
 
 ### Patch Changes
