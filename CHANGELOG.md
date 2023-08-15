@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.0.0
+
+### Major Changes
+
+- 903f1c4: Organised repo, setup nav, footer, home and 404 files
+
 ## 0.0.1
 
 ### Patch Changes
