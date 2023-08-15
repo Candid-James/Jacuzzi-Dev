@@ -1,5 +1,7 @@
 import { featureItemSlider } from 'src/utils/featuredItemSlider.js';
 
+$.ajaxSetup({ cache: false });
+
 // Retrieve a specific element from another page and append it to the current page
 function fetchAndAppendElement() {
   try {
@@ -27,6 +29,8 @@ function fetchAndAppendElement() {
           // Append the cloned element to the current page
           if (appendItem) {
             appendItem.appendChild(clonedElement);
+            // Call the fetchAndAppendElement function when the page has finished loading
+            featureItemSlider();
           }
         } else {
           console.error('Failed to fetch the featured products.');
@@ -37,8 +41,3 @@ function fetchAndAppendElement() {
   }
 }
 fetchAndAppendElement();
-
-// Call the fetchAndAppendElement function when the page has finished loading
-window.addEventListener('DOMContentLoaded', function () {
-  featureItemSlider();
-});
