@@ -4,7 +4,7 @@ import { featureItemSlider } from 'src/utils/featuredItemSlider.js';
 function fetchAndAppendElement() {
   try {
     // Fetch the other page's HTML
-    fetch('/')
+    fetch('/404-page-not-indexed')
       .then((response) => {
         if (!response.ok) {
           throw new Error('HTTP error! status: ' + response.status);
