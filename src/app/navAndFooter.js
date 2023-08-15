@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function () {
+function navInit() {
   // Cache DOM elements
   const wrapper = document.querySelector('.nav_menu-list');
   const nav = document.querySelector('.nav');
@@ -135,4 +135,19 @@ window.addEventListener('DOMContentLoaded', function () {
   openSide.addEventListener('click', openSideMenu);
 
   hotTubsMobile.addEventListener('click', handleHotTubsMobile);
+}
+
+const observer = new MutationObserver((mutations, observerInstance) => {
+  const navElement = document.querySelector('.nav');
+
+  if (navElement) {
+    navInit();
+    observerInstance.disconnect(); // Stops the observer once the .nav element is found and processed.
+  }
+});
+
+// Starts observing the document for changes.
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
 });
