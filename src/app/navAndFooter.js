@@ -13,6 +13,30 @@ function navInit() {
   const firstLayerLinks = firstLayer[0].querySelectorAll('.nav_menu-link');
   const hotTubItems = document.querySelectorAll('.nav_hot-tub-item');
 
+  let lastScrollTop = 0;
+  let isNavHidden = false;
+
+  window.addEventListener('scroll', function () {
+    let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Determine scroll direction
+    if (currentScrollTop > lastScrollTop) {
+      // Scrolling down
+      if (!isNavHidden) {
+        gsap.to('.nav', { duration: 0.5, y: '-100%' });
+        isNavHidden = true;
+      }
+    } else {
+      // Scrolling up
+      if (isNavHidden) {
+        gsap.to('.nav', { duration: 0.5, y: '0%' });
+        isNavHidden = false;
+      }
+    }
+
+    lastScrollTop = currentScrollTop;
+  });
+
   // animations
   function sideOpenAnimation() {
     let tl = gsap.timeline();
