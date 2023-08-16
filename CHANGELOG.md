@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.0.4
+
+### Patch Changes
+
+- ad2a6fd: Adjuster Swiper on 404
+
 ## 1.0.3
 
 ### Patch Changes
