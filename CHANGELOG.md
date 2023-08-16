@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.0.5
+
+### Patch Changes
+
+- dcd9576: Added new animation to nav
+- 70c65ca: Improved 404 slider init
+
 ## 1.0.4
 
 ### Patch Changes
