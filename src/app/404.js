@@ -1,7 +1,5 @@
 import { featureItemSlider } from 'src/utils/featuredItemSlider.js';
 
-$.ajaxSetup({ cache: false });
-
 // Retrieve a specific element from another page and append it to the current page
 function fetchAndAppendElement() {
   try {
