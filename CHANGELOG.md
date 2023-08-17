@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.1.0
+
+### Minor Changes
+
+- 632ef9e: Added hotTubOptions slider and FullHeight Slider
+
 ## 1.0.5
 
 ### Patch Changes
