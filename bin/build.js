@@ -7,7 +7,12 @@ const BUILD_DIRECTORY = 'dist';
 const PRODUCTION = process.env.NODE_ENV === 'production';
 
 // Config entrypoint files
-const ENTRY_POINTS = ['src/app/404.js', 'src/app/navAndFooter.js', 'src/app/home.js'];
+const ENTRY_POINTS = [
+  'src/app/404.js',
+  'src/app/navAndFooter.js',
+  'src/app/home.js',
+  'src/app/hotTubRange.js',
+];
 
 // Config dev serving
 const LIVE_RELOAD = !PRODUCTION;
