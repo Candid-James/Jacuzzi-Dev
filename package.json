@@ -48,12 +48,12 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "prettier": "^3.0.1",
+    "prettier": "^3.0.2",
     "typescript": "^5.1.6"
   },
   "dependencies": {
     "@finsweet/ts-utils": "^0.40.0",
-    "swiper": "^10.1.0"
+    "swiper": "^10.2.0"
   },
   "engines": {
     "pnpm": ">=8"
