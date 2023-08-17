@@ -14,15 +14,15 @@ export function createHotTubOptionSlider() {
     const nextArrow = nav.querySelector(`[${identifier}-element='next-arrow']`);
     const prevArrow = nav.querySelector(`[${identifier}-element='prev-arrow']`);
 
-    for (let i = 0; i < item.length; i++) {
-      const clonedItem = item[i].cloneNode(true);
-      list.appendChild(clonedItem);
-    }
-
     const listClass = getFirstWord(list);
     const itemClass = getFirstWord(item[0]);
 
-    if (wrapper) {
+    if (items.length > 2 && wrapper) {
+      for (let i = 0; i < item.length; i++) {
+        const clonedItem = item[i].cloneNode(true);
+        list.appendChild(clonedItem);
+      }
+
       const swiper = new Swiper(wrapper, {
         modules: [Navigation],
         speed: 650,
@@ -45,6 +45,8 @@ export function createHotTubOptionSlider() {
           },
         },
       });
+    } else {
+      nav.remove();
     }
   });
 }
