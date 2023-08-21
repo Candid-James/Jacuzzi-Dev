@@ -17,7 +17,7 @@ export function createHotTubOptionSlider() {
     const listClass = getFirstWord(list);
     const itemClass = getFirstWord(item[0]);
 
-    if (items.length > 2 && wrapper) {
+    if (item.length > 2 && wrapper) {
       for (let i = 0; i < item.length; i++) {
         const clonedItem = item[i].cloneNode(true);
         list.appendChild(clonedItem);

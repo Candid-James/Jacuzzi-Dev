@@ -7,7 +7,6 @@ export function featureItemSlider() {
 
   if (window.innerWidth < 767) {
     sliders.forEach((e) => {
-      console.log('found:' + e);
       const wrapper = e.querySelector(`[${identifier}-element='wrapper']`);
       const list = e.querySelector(`[${identifier}-element='list']`);
       const item = e.querySelector(`[${identifier}-element='item']`);
