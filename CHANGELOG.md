@@ -1,5 +1,15 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.1.1
+
+### Patch Changes
+
+- 7d3a391: Adjusted module imports
+- a98fb13: Tweaked hot tub options slider
+- 1f593c3: Improved options slider
+- 1f593c3: Improved hotTubOptionSlider.mjs
+- ec66ad0: Tweak to option slider
+
 ## 1.1.0
 
 ### Minor Changes
