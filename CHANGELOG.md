@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.1.2
+
+### Patch Changes
+
+- 5a7a72f: Fixed hot tub option slider
+
 ## 1.1.1
 
 ### Patch Changes
