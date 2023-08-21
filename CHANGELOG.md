@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.0
+
+### Minor Changes
+
+- fb71c3c: Created new popout functionality
+
 ## 1.1.2
 
 ### Patch Changes
