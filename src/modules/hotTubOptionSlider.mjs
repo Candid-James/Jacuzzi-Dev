@@ -1,6 +1,6 @@
 import { Swiper } from 'swiper';
 import { Navigation } from 'swiper/modules';
-import { getFirstWord } from 'src/utils/getClassName.mjs';
+import { getFirstWord } from 'src/modules/getClassName.mjs';
 
 export function createHotTubOptionSlider() {
   const identifier = 'options';

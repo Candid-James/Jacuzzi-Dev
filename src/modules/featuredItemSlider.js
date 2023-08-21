@@ -1,5 +1,5 @@
 import { Swiper } from 'swiper';
-import { getFirstWord } from 'src/utils/getClassName.mjs';
+import { getFirstWord } from 'src/modules/getClassName.mjs';
 
 export function featureItemSlider() {
   const identifier = 'featured';
