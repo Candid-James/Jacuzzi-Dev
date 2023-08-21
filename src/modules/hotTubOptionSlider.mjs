@@ -40,7 +40,7 @@ export function createHotTubOptionSlider() {
           320: {
             slidesPerView: 1,
           },
-          480: {
+          767: {
             slidesPerView: 3,
           },
         },

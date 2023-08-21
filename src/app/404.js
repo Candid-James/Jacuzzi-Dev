@@ -1,4 +1,4 @@
-import { featureItemSlider } from 'src/utils/featuredItemSlider.js';
+import { featureItemSlider } from 'src/modules/featuredItemSlider.js';
 
 // Retrieve a specific element from another page and append it to the current page
 function fetchAndAppendElement() {

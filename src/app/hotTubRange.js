@@ -1,5 +1,5 @@
-import { createFullHeightSlider } from 'src/utils/fullHeightSlider.mjs';
-import { createHotTubOptionSlider } from 'src/utils/hotTubOptionSlider.mjs';
+import { createFullHeightSlider } from 'src/modules/fullHeightSlider.mjs';
+import { createHotTubOptionSlider } from 'src/modules/hotTubOptionSlider.mjs';
 
 window.addEventListener('DOMContentLoaded', function () {
   createHotTubOptionSlider();
