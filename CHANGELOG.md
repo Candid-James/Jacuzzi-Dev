@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.1
+
+### Patch Changes
+
+- 6456278: Adjusted nav, added hotTubPromo script
+
 ## 1.2.0
 
 ### Minor Changes
