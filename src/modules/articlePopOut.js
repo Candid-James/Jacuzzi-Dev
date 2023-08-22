@@ -4,7 +4,6 @@
 
 export function setPopOutArticles() {
   // Start a timer named 'popout' to measure the execution time of this function.
-  console.time('popout');
 
   // Select the container where the fetched article content will be displayed.
   const contentContainer = document.querySelector('.simple-article-content');
@@ -13,7 +12,6 @@ export function setPopOutArticles() {
   const modalWrapper = document.querySelector('.simple-article-wrapper');
 
   modalWrapper.addEventListener('click', (e) => {
-    console.log('clicked modal');
     handleModalClick(e);
   });
   // Select all buttons with the id 'demo-button'.
@@ -31,7 +29,6 @@ export function setPopOutArticles() {
   // This function is triggered when the button is hovered over.
   function handlePrefetch(event) {
     // Start a timer named 'handle prefetch' to measure the execution time of this function.
-    console.time('handle prefetch');
 
     // Prevent the default behavior of the event.
     event.preventDefault();
@@ -63,7 +60,6 @@ export function setPopOutArticles() {
             prefetchedData = { content: container.querySelector('.main-wrapper'), url: url };
 
             // End the 'handle prefetch' timer and log the execution time.
-            console.timeEnd('handle prefetch');
           });
       } catch (error) {
         // Log any errors encountered during the fetch operation.
@@ -79,8 +75,6 @@ export function setPopOutArticles() {
   function handleClick(e) {
     // Start two timers to measure the execution time for both fetching and using prefetched data.
 
-    console.log('click');
-
     // Get the URL from the button's href attribute.
     const url = e.currentTarget.href;
 
@@ -90,14 +84,8 @@ export function setPopOutArticles() {
     // If data was prefetched and its URL matches the clicked button's URL,
     // use the prefetched data instead of fetching again.
     if (prefetchedData && prefetchedData.url === url) {
-      console.time('handle click prefetch');
-
-      console.log('prefetch only');
       updatePageWithNewData(prefetchedData.content);
-      console.timeEnd('handle click prefetch');
     } else {
-      console.time('handle click fetch');
-      console.log('fetch only');
       // If data was not prefetched, fetch it now.
       try {
         fetch(url)
@@ -119,7 +107,6 @@ export function setPopOutArticles() {
             contentContainer.appendChild(data);
 
             // End the 'handle click fetch' timer and log the execution time.
-            console.timeEnd('handle click fetch');
           });
       } catch (error) {
         console.error(
@@ -135,8 +122,6 @@ export function setPopOutArticles() {
   }
 
   function handleModalClick(e) {
-    console.log(e);
-    console.log(e.currentTarget);
     if (e.currentTarget === modalWrapper) {
       modalClose();
     }

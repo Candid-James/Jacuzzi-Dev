@@ -28,7 +28,7 @@ function navInit() {
       }
     } else {
       // Scrolling up
-      if (isNavHidden) {
+      if (isNavHidden || currentScrollTop === 0) {
         gsap.to('.nav', { duration: 0.5, y: '0%' });
         isNavHidden = false;
       }
