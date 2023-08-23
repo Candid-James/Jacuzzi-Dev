@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.2
+
+### Patch Changes
+
+- 4f56802: Added form zip validation
+
 ## 1.2.1
 
 ### Patch Changes
