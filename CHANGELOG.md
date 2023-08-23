@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.4
+
+### Patch Changes
+
+- 958582e: Fixed issue on downloadBrochure page
+
 ## 1.2.3
 
 ### Patch Changes
