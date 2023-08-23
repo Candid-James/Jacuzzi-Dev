@@ -1,0 +1,13 @@
+import { featureItemSlider } from 'src/modules/featuredItemSlider.js';
+
+window.addEventListener('DOMContentLoaded', () => {
+  featureItemSlider();
+  const faqLinks = document.querySelectorAll('.faqs_item');
+
+  for (let i = 0; i < faqLinks.length; i++) {
+    faqLinks[i].addEventListener('click', (e) => {
+      const elementTarget = e.currentTarget;
+      elementTarget.classList.toggle('is-open');
+    });
+  }
+});
