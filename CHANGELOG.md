@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.3
+
+### Patch Changes
+
+- 0c1194d: Added downloadBrochure.js
+
 ## 1.2.2
 
 ### Patch Changes
