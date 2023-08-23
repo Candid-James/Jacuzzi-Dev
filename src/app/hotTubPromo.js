@@ -1,6 +1,16 @@
-const showButton = document.getElementById('show-contact-form');
+import { contactZipCodeValidation } from 'src/modules/contactFormat.js';
 
-showButton.addEventListener('click', (e) => {
-  const form = document.querySelector('.section_contact');
-  form.classList.remove('is-closed');
+window.addEventListener('DOMContentLoaded', () => {
+  const showButton = document.getElementById('show-contact-form');
+
+  showButton.addEventListener('click', (e) => {
+    const form = document.querySelector('.section_contact');
+    form.classList.remove('is-closed');
+  });
+
+  const submitButton = document.getElementById('submitButton');
+  const countrySelect = document.getElementById('Hot-Tub-Promotion-Country-Code');
+  const zipCode = document.getElementById('Hot-Tub-Promotion-Zip-Code');
+
+  contactZipCodeValidation(submitButton, countrySelect, zipCode);
 });
