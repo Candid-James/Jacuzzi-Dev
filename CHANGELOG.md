@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.5
+
+### Patch Changes
+
+- 6eaf31f: added FAQ
+
 ## 1.2.4
 
 ### Patch Changes
