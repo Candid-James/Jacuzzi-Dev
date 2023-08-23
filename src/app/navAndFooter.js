@@ -161,17 +161,19 @@ function navInit() {
   hotTubsMobile.addEventListener('click', handleHotTubsMobile);
 }
 
-const observer = new MutationObserver((mutations, observerInstance) => {
-  const navElement = document.querySelector('.nav');
+window.addEventListener('DOMContentLoaded', () => {
+  const observer = new MutationObserver((mutations, observerInstance) => {
+    const navElement = document.querySelector('.nav');
 
-  if (navElement) {
-    navInit();
-    observerInstance.disconnect(); // Stops the observer once the .nav element is found and processed.
-  }
-});
+    if (navElement) {
+      navInit();
+      observerInstance.disconnect(); // Stops the observer once the .nav element is found and processed.
+    }
+  });
 
-// Starts observing the document for changes.
-observer.observe(document.body, {
-  childList: true,
-  subtree: true,
+  // Starts observing the document for changes.
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true,
+  });
 });
