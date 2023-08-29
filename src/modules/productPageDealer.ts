@@ -9,7 +9,7 @@ fetch('https://api.ipapi.com/check?access_key=YOUR_API_KEY')
     // Call the function to get dealer info
     getDealerInfo(latitude, longitude);
   })
-  .catch((error) => console.log(error));
+  .catch((error) => console.error(error));
 
 function getDealerInfo(latitude: number, longitude: number) {
   fetch(
@@ -26,7 +26,7 @@ function getDealerInfo(latitude: number, longitude: number) {
       // Display the dealer data on the page
       displayDealerInfo(data);
     })
-    .catch((error) => console.log(error));
+    .catch((error) => console.error(error));
 }
 
 interface DealerData {
@@ -42,5 +42,5 @@ function displayDealerInfo(dealerData: DealerData) {
   const dealerPhone = dealerData.Phone__c;
   const dealerEmail = dealerData.Email__c;
 
-  console.log({ dealerAddress, dealerEmail, dealerName, dealerPhone });
+  // console.log({ dealerAddress, dealerEmail, dealerName, dealerPhone });
 }

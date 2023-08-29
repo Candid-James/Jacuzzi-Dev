@@ -11,7 +11,6 @@ function navInit() {
   const hotTubsMobile = document.querySelector('[open-third-layer]');
   const firstLayer = document.querySelectorAll('.nav_menu-layer');
   const firstLayerLinks = firstLayer[0].querySelectorAll('.nav_menu-link');
-  const hotTubItems = document.querySelectorAll('.nav_hot-tub-item');
 
   let lastScrollTop = 0;
   let isNavHidden = false;

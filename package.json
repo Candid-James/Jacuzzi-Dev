@@ -1,20 +1,20 @@
 {
   "name": "@candid-james-battye/jacuzzi-dev",
   "version": "1.2.5",
-  "description": "Developer starter template for Finsweet projects.",
-  "homepage": "https://github.com/finsweet/developer-starter#readme",
+  "description": "Hosted code for the D1 Spas Project.",
+  "homepage": "https://github.com/candid-james/jacuzzi-dev#readme",
   "license": "ISC",
   "keywords": [],
   "author": {
-    "name": "Finsweet",
-    "url": "https://finsweet.com/"
+    "name": "Candid James",
+    "url": "https://candidleap.com/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/finsweet/developer-starter.git"
+    "url": "git+https://github.com/candid-james/jacuzzi-dev.git"
   },
   "bugs": {
-    "url": "https://github.com/finsweet/developer-starter/issues"
+    "url": "https://github.com/candid-james/jacuzzi-dev/issues"
   },
   "type": "module",
   "main": "src/index.ts",

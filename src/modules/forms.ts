@@ -1,8 +1,8 @@
 const salesForceURL: string =
   'https://jacuzzibrands--uat.sandbox.my.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
-const oldURL: string = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
+// const oldURL: string = 'https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8';
 
-const form = document.getElementById('salesforceForm') as HTMLFormElement;
+// const form = document.getElementById('salesforceForm') as HTMLFormElement;
 
 const button = document.getElementById('submitButton') as HTMLButtonElement;
 
@@ -58,11 +58,12 @@ button?.addEventListener('click', function (e: MouseEvent) {
       throw new Error('Network response was not ok.');
     })
     .then(function (data: string) {
-      console.log(data);
+      // console.log(data);
+      data
     })
     .catch(function (error: Error) {
       console.error(error);
     });
 
-  console.log(formData);
+  // console.log(formData);
 });
