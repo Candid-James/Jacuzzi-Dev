@@ -1,4 +1,4 @@
-import { contactZipCodeValidation } from 'src/modules/contactFormat.js';
+import { contactZipCodeValidation } from 'src/modules/contactFormat.mjs';
 
 window.addEventListener('DOMContentLoaded', () => {
   const showButton = document.getElementById('show-contact-form');
