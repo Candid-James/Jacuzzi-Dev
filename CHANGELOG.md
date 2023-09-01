@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.7
+
+### Patch Changes
+
+- f4efcfd: added slider to download brochure page
+
 ## 1.2.6
 
 ### Patch Changes
