@@ -1,5 +1,14 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.6
+
+### Patch Changes
+
+- f5a0b67: General improvements and progress
+- f540566: Overall improvements
+- f5a0b67: overall improvement
+- f5a0b67: Overall improvements
+
 ## 1.2.5
 
 ### Patch Changes
