@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.10
+
+### Patch Changes
+
+- 8874d24: Comments added, show pricing functionality completed
+
 ## 1.2.9
 
 ### Patch Changes
