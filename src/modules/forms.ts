@@ -59,7 +59,7 @@ button?.addEventListener('click', function (e: MouseEvent) {
     })
     .then(function (data: string) {
       // console.log(data);
-      data
+      data;
     })
     .catch(function (error: Error) {
       console.error(error);

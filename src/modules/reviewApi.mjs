@@ -1,132 +1,93 @@
+/**
+ * Initializes and displays Google reviews.
+ *
+ * This function fetches Google place details such as reviews and displays them on the UI.
+ * It also provides functionalities to duplicate review templates, fade in elements, and hide elements.
+ *
+ * @param {Function} callback - A callback function to be invoked once reviews have been processed and displayed.
+ */
 export function initGoogleReviews(callback) {
-  // Function to append multiple review divs based on the given index
+  /**
+   * Duplicates the first review div multiple times, based on the given index.
+   * This helps in preparing the UI to display multiple reviews.
+   *
+   * @param {Number} index - The number of times the first review div should be duplicated.
+   */
   function appendReviews(index) {
+    // Repeatedly clone the first review div to match the required count
     for (let i = 0; i < index - 1; i++) {
-      // Get the first review div element
       const firstReviewDiv = document.querySelector('[data-div="review"]:first-child');
-      // Clone the first review div element
       const clonedReviewElement = firstReviewDiv.cloneNode(true);
-      // Get the parent element for review divs
       const reviewWrapper = document.querySelector('[data-div="review-wrapper"]');
-      // Append the cloned review div to the wrapper
       reviewWrapper.appendChild(clonedReviewElement);
     }
   }
 
-  // Custom function to create a fade-in effect for an element
+  /**
+   * Gradually increases the visibility of a given HTML element.
+   * This is achieved by adjusting its opacity in regular intervals.
+   *
+   * @param {HTMLElement} element - The HTML element to fade in.
+   */
   function fadeIn(element) {
     element.style.opacity = 0;
     element.style.display = 'block';
-    const fadeInInterval = setInterval(function () {
+
+    const fadeInInterval = setInterval(() => {
       if (element.style.opacity < 1) {
-        element.style.opacity = Number(element.style.opacity) + 0.1;
+        element.style.opacity = parseFloat(element.style.opacity) + 0.1;
       } else {
         clearInterval(fadeInInterval);
       }
-    }, 50); // Adjust the interval (in ms) for a smoother fade-in effect
+    }, 50);
   }
 
-  // Custom function to hide an element
+  /**
+   * Conceals a given HTML element from view.
+   *
+   * @param {HTMLElement} element - The HTML element to hide.
+   */
   function hide(element) {
     element.style.display = 'none';
   }
 
-  // Start of main code
-  // Using jQuery to perform a GET request with a place ID as a parameter
-
-  $.get('https://dev--d1-spas--candidleap.autocode.dev/', {
-    googleID,
-  }).then((res) => {
-    // Extract reviews and opening hours information from the response
+  // Fetch Google place details using a custom endpoint
+  $.get('https://dev--d1-spas--candidleap.autocode.dev/', { googleID }).then((res) => {
     let reviews = res.reviews;
-    let openingObj = res.opening_hours;
 
-    // Log the response for debugging
+    // Populate place details on the UI
+    document.querySelector('[data-text="address"]').textContent = res.formatted_address;
+    document.querySelector('[data-button="website"]').setAttribute('href', res.website);
+    document.querySelector('[data-button="direction"]').setAttribute('href', res.url);
 
-    // Update UI elements with place information
-    const addressText = document.querySelector('[data-text="address"]');
-    // const openText = document.querySelector('[data-text="opening"]');
-    const websiteBtn = document.querySelector('[data-button="website"]');
-    const directionBtn = document.querySelector('[data-button="direction"]');
-    // const openingHour = document.querySelectorAll('[data-text="day"]');
-
-    addressText.textContent = res.formatted_address;
-    websiteBtn.setAttribute('href', res.website);
-    directionBtn.setAttribute('href', res.url);
-
-    // Display whether the place is open or closed
-    // if (openingObj.open_now) {
-    //   openText.textContent = 'open now';
-    // } else {
-    //   openText.textContent = 'closed now';
-    // }
-
-    // Display opening hours for each day of the week
-    // for (let i = 0; i < openingObj.weekday_text.length; i++) {
-    //   openingHour[i].textContent = openingObj.weekday_text[i];
-    // }
-
-    // // Display the place's rating using star icons
-    // const ratingDiv = document.querySelector('[data-div="rating"]');
-    // const starIcons = ratingDiv.children;
-
-    // // Remove star icons based on the rating value
-    // for (let i = 0; i < 5 - res.rating; i++) {
-    //   if (starIcons[i]) {
-    //     ratingDiv.removeChild(starIcons[i]);
-    //   } else {
-    //     // No more star icons to remove
-    //     break;
-    //   }
-    // }
-
-    // Display reviews if available
+    // Proceed if there are reviews to be displayed
     if (reviews.length > 0) {
-      // Append additional review divs based on the total number of reviews
       appendReviews(reviews.length);
 
-      // Loop through each review and update corresponding UI elements
-      for (let x = 0; x < reviews.length; x++) {
-        // Update reviewer's name
-        const nameElements = document.querySelectorAll('[data-text="name"]');
-        nameElements[x].textContent = reviews[x]['author_name'];
+      // Iterate over the reviews to display them on the UI
+      reviews.forEach((review, x) => {
+        // Update review contents
+        document.querySelectorAll('[data-text="name"]')[x].textContent = review.author_name;
+        document.querySelectorAll('[data-text="date"]')[x].textContent =
+          review.relative_time_description;
+        document.querySelectorAll('[data-text="review"]')[x].textContent = review.text;
 
-        // Update review's time description
-        const dateElements = document.querySelectorAll('[data-text="date"]');
-        dateElements[x].textContent = reviews[x]['relative_time_description'];
-
-        // Update review text
-        const reviewElements = document.querySelectorAll('[data-text="review"]');
-        reviewElements[x].textContent = reviews[x]['text'];
-
-        // Update reviewer's image
+        // Set the reviewer's profile picture
         const imageElements = document.querySelectorAll('[data-div="image"]');
+        imageElements[x].setAttribute('src', review.profile_photo_url);
+        imageElements[x].setAttribute('srcset', review.profile_photo_url);
 
-        imageElements[x].setAttribute('src', reviews[x]['profile_photo_url']);
-        imageElements[x].setAttribute('srcset', reviews[x]['profile_photo_url']);
-
-        // Display reviewer's rating using star icons
+        // Display stars representing the reviewer's rating
         const starsDiv = document.querySelectorAll('[data-div="stars"]')[x];
-        const starIcons = starsDiv.children;
+        const starIcons = [...starsDiv.children];
+        starIcons.slice(review.rating).forEach((star) => starsDiv.removeChild(star));
+      });
 
-        // Remove star icons based on the reviewer's rating
-        for (let i = 0; i < 5 - reviews[x].rating; i++) {
-          if (starIcons[i]) {
-            starsDiv.removeChild(starIcons[i]);
-          } else {
-            // No more star icons to remove
-            break;
-          }
-        }
-      }
-
-      // Invoke the callback if provided
-
+      // Execute the callback once all reviews are processed
       callback();
-      //   Hide the loading animation and fade in the main content
-      console.log('Hiding loading animation...');
-      hide(document.querySelector('[data-lottie="loading"]'));
 
+      // Display the main content after loading and processing the reviews
+      hide(document.querySelector('[data-lottie="loading"]'));
       fadeIn(document.querySelector('[data-div="main"]'));
     }
   });

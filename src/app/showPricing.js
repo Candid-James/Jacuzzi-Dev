@@ -1,55 +1,54 @@
-// Get all dom elements
+// Import required functions from the 'showPricingFunctions.mjs' module.
+import { showPricingFalseTag, showPricingTrueTag } from 'src/modules/showPricingFunctions.mjs';
+
+// Select all elements with 'j-element' attribute set to 'show-pricing-true'.
 const pricingTrueTag = document.querySelectorAll('[j-element="show-pricing-true"]');
+
+// Select all elements with 'j-element' attribute set to 'show-pricing-false'.
 const pricingFalseTag = document.querySelectorAll('[j-element="show-pricing-false"]');
 
+/**
+ * Function to hide both types of pricing tags.
+ */
 function hidePricingTag() {
-  // Hide both pricing tags
+  // Iterate through all elements of 'pricingTrueTag' and set their display style to 'none' (hidden).
   pricingTrueTag.forEach((el) => {
     el.style.display = 'none';
   });
 
+  // Iterate through all elements of 'pricingFalseTag' and set their display style to 'none' (hidden).
   pricingFalseTag.forEach((el) => {
     el.style.display = 'none';
   });
 }
 
-function showPricingTrueTag() {
-  pricingTrueTag.forEach((el) => {
-    el.style.display = '';
-  });
-}
-
-function showPricingFalseTag() {
-  pricingFalseTag.forEach((el) => {
-    el.style.display = '';
-  });
-}
-
-// Function to update cookie's value
-function updateCookie(cookieName, newValue) {
-  //create cookies if not exist
-  if (!document.cookie.includes(cookieName)) {
-    document.cookie = `${cookieName}=${newValue}; path=/`;
-  }
-}
-
+/**
+ * Function to retrieve the value of a given cookie by its name.
+ *
+ * @returns {string|null} - The value of the cookie or null if not found.
+ */
 function getCookieValue(cookieName) {
-  // Split the cookie string into individual cookies
+  // Split the document's cookie string into an array of individual cookies.
   var cookies = document.cookie.split(';');
-  // Iterate over the cookies to find the one with the specified name
+
+  // Loop through each cookie.
   for (var i = 0; i < cookies.length; i++) {
     var cookie = cookies[i].trim();
-    // Check if the cookie starts with the specified name
+
+    // If the current cookie starts with the provided cookieName, extract its value.
     if (cookie.indexOf(cookieName + '=') === 0) {
-      // Extract and return the cookie value
       return cookie.substring(cookieName.length + 1);
     }
   }
-  // Return null if the cookie is not found
+
+  // If the specified cookie isn't found, return null.
   return null;
 }
 
-// check for cookie
+/**
+ * Function to check the value of the 'show-pricing' cookie.
+ * Depending on the value, it will either show the pricingTrueTag or the pricingFalseTag.
+ */
 function checkCookie() {
   if (getCookieValue('show-pricing')) {
     showPricingTrueTag();
@@ -58,15 +57,21 @@ function checkCookie() {
   }
 }
 
-// Default behavior :
-// All pricing tag with j-element="show-pricing" is set to display none
-// Check for show-pricing cookies, if true then pricing tag will be shown
+// Default behavior when the website is loaded:
+// All elements with 'j-element' attribute set to 'show-pricing' will be hidden by default.
+// Then, the script will check for the 'show-pricing' cookie.
+// If the cookie has a value of 'true', the pricingTrueTag will be displayed.
 var Webflow = Webflow || [];
 window.addEventListener('DOMContentLoaded', () => {
-  // Webflow is done loading
+  // Function to define the default behavior.
   function defaultBehaviour() {
+    // Hide all pricing tags by default.
     hidePricingTag();
+
+    // Check for the 'show-pricing' cookie and display the appropriate tag.
     checkCookie();
   }
+
+  // Execute the default behavior.
   defaultBehaviour();
 });
