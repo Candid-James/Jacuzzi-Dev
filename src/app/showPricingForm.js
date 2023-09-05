@@ -1,7 +1,7 @@
-window.addEventListener('DOMContentLoaded', () => {
-  // Importing required functions from the 'showPricingFunctions.mjs' module.
-  import { showPricingTrueTag, updateCookie } from 'src/modules/showPricingFunctions.mjs';
+// Importing required functions from the 'showPricingFunctions.mjs' module.
+import { showPricingTrueTag, updateCookie } from 'src/modules/showPricingFunctions.mjs';
 
+window.addEventListener('DOMContentLoaded', () => {
   // Get all forms that have the 'j-element' attribute set to 'reveal-pricing'.
   const form = document.querySelectorAll('[j-element="reveal-pricing"]');
 
@@ -13,6 +13,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Get the modal with the class 'simple-article-wrapper'.
   const modal = document.querySelector('.simple-article-wrapper');
+
+  // Handle the potential closing of the modal.
+  function handleModalClick(e) {
+    if (e.target === modal) {
+      modalClose();
+    }
+  }
+
+  // Add an event listener to the modal wrapper to handle potential closing of the modal.
+  modal.addEventListener('click', handleModalClick);
 
   // Get the close button element for the modal.
   const closeButton = document.querySelector("[j-element='modal-close']");

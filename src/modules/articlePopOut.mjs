@@ -95,7 +95,8 @@ export function setPopOutArticles() {
 
   // Handle the potential closing of the modal.
   function handleModalClick(e) {
-    if (e.currentTarget === modalWrapper) {
+    console.log(e.target);
+    if (e.target === modalWrapper) {
       modalClose();
     }
   }
