@@ -1,17 +1,16 @@
+// Cache DOM elements
+const wrapper = document.querySelector('.nav_menu-list');
+const nav = document.querySelector('.nav');
+const secondLayer = document.querySelector('[second-layer]');
+const hotTubToggle = document.querySelector('[open-hot-tub-modal]');
+const layerLink = document.querySelector('[open-second-layer]');
+const backButton = document.querySelector('[menu-back-button]');
+const closeButton = document.querySelector('[close-side-menu]');
+const openSide = document.querySelector('[open-side-modal]');
+const hotTubsMobile = document.querySelector('[open-third-layer]');
+const firstLayer = document.querySelectorAll('.nav_menu-layer');
+const firstLayerLinks = firstLayer[0].querySelectorAll('.nav_menu-link');
 function navInit() {
-  // Cache DOM elements
-  const wrapper = document.querySelector('.nav_menu-list');
-  const nav = document.querySelector('.nav');
-  const secondLayer = document.querySelector('[second-layer]');
-  const hotTubToggle = document.querySelector('[open-hot-tub-modal]');
-  const layerLink = document.querySelector('[open-second-layer]');
-  const backButton = document.querySelector('[menu-back-button]');
-  const closeButton = document.querySelector('[close-side-menu]');
-  const openSide = document.querySelector('[open-side-modal]');
-  const hotTubsMobile = document.querySelector('[open-third-layer]');
-  const firstLayer = document.querySelectorAll('.nav_menu-layer');
-  const firstLayerLinks = firstLayer[0].querySelectorAll('.nav_menu-link');
-
   let lastScrollTop = 0;
   let isNavHidden = false;
 
@@ -86,7 +85,9 @@ function navInit() {
   }
 
   function closeSideMenu() {
-    nav.classList.remove('side-open');
+    if (nav.classList.contains('side-open')) {
+      nav.classList.remove('side-open');
+    }
   }
 
   // Core Functions
@@ -161,6 +162,24 @@ function navInit() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('click', (e) => {
+    const menuWrapper = document.querySelector('.nav_menu-wrapper');
+    const hotTubWraper = document.querySelector('.nav_hot-tubs-wrapper');
+    if (
+      !menuWrapper.contains(e.target) &&
+      !hotTubWraper.contains(e.target) &&
+      !e.target.matches('button, a') &&
+      !(e.target instanceof HTMLDivElement && e.target.innerHTML === 'Hot Tubs')
+    ) {
+      if (nav.classList.contains('side-open')) {
+        nav.classList.remove('side-open');
+      }
+
+      if (nav.classList.contains('hot-tub-open')) {
+        nav.classList.remove('hot-tub-open');
+      }
+    }
+  });
   const observer = new MutationObserver((mutations, observerInstance) => {
     const navElement = document.querySelector('.nav');
 

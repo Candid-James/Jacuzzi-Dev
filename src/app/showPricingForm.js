@@ -14,6 +14,14 @@ window.addEventListener('DOMContentLoaded', () => {
   // Get the modal with the class 'simple-article-wrapper'.
   const modal = document.querySelector('.simple-article-wrapper');
 
+  // Close the modal and clear its content.
+  function modalClose() {
+    modalWrapper.classList.remove('is-open');
+    setTimeout(() => {
+      contentContainer.firstChild.remove();
+    }, 150);
+  }
+
   // Handle the potential closing of the modal.
   function handleModalClick(e) {
     if (e.target === modal) {
