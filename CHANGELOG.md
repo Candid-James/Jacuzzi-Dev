@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.13
+
+### Patch Changes
+
+- 379b013: Added new functions to the pricing form
+
 ## 1.2.12
 
 ### Patch Changes
