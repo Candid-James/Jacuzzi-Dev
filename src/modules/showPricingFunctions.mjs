@@ -23,10 +23,8 @@ export function showPricingTrueTag(pricingTrueTag) {
  *
  * @param {HTMLElement[]} pricingTrueTag - List of HTML elements to be displayed.
  *
- * @note This function seems to have a potential naming error.
- *       It should probably receive `pricingFalseTag` as the parameter.
  */
-export function showPricingFalseTag(pricingTrueTag) {
+export function showPricingFalseTag(pricingFalseTag) {
   pricingFalseTag.forEach((el) => {
     el.style.display = '';
   });

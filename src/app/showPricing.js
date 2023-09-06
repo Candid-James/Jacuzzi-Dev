@@ -51,9 +51,9 @@ function getCookieValue(cookieName) {
  */
 function checkCookie() {
   if (getCookieValue('show-pricing')) {
-    showPricingTrueTag();
+    showPricingTrueTag(pricingTrueTag);
   } else {
-    showPricingFalseTag();
+    showPricingFalseTag(pricingFalseTag);
   }
 }
 
