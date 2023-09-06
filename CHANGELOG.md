@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.12
+
+### Patch Changes
+
+- bf26a1d: general improvements
+- bf26a1d: improved nav features
+
 ## 1.2.11
 
 ### Patch Changes
