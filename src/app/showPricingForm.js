@@ -76,6 +76,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // Call the helper function to display the correct pricing tag elements.
       showPricingTrueTag(pricingTrueTag);
+
+      const banner = document.querySelector('.pricing_banner-wrapper');
+
+      banner.style.transform = 'translateY(0%)';
+
+      closeButton.click();
     }
   });
 });
