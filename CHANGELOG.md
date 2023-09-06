@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.11
+
+### Patch Changes
+
+- 24b4b3c: improved modal closing scripts
+- 2fd7a04: Adjusted pricing form to wait till dom content loaded
+
 ## 1.2.10
 
 ### Patch Changes
