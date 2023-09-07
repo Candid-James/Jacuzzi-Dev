@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.15
+
+### Patch Changes
+
+- 2c01237: general improvements
+- 48c2729: added type safety to pricing function
+
 ## 1.2.14
 
 ### Patch Changes
