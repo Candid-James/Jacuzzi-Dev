@@ -12,12 +12,12 @@ const pricingFalseTag = document.querySelectorAll('[j-element="show-pricing-fals
  */
 function hidePricingTag() {
   // Iterate through all elements of 'pricingTrueTag' and set their display style to 'none' (hidden).
-  pricingTrueTag.forEach((el) => {
+  pricingTrueTag?.forEach((el) => {
     el.style.display = 'none';
   });
 
   // Iterate through all elements of 'pricingFalseTag' and set their display style to 'none' (hidden).
-  pricingFalseTag.forEach((el) => {
+  pricingFalseTag?.forEach((el) => {
     el.style.display = 'none';
   });
 }

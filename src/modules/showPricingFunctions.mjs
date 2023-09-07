@@ -18,14 +18,12 @@ export function showPricingTrueTag(pricingTrueTag) {
  *
  * Similar to `showPricingTrueTag`, this function makes elements in the
  * `pricingFalseTag` list visible. Despite its name, it uses the
- * `pricingTrueTag` parameter. It seems like a potential error
- * as the parameter name and function name don't align.
  *
- * @param {HTMLElement[]} pricingTrueTag - List of HTML elements to be displayed.
+ * @param {HTMLElement[]} falseTag - List of HTML elements to be displayed.
  *
  */
-export function showPricingFalseTag(pricingFalseTag) {
-  pricingFalseTag.forEach((el) => {
+export function showPricingFalseTag(falseTag) {
+  falseTag.forEach((el) => {
     el.style.display = '';
   });
 }
