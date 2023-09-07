@@ -21,7 +21,7 @@ function navInit() {
     if (currentScrollTop > lastScrollTop) {
       // Scrolling down
       if (!isNavHidden) {
-        gsap.to('.nav', { duration: 0.5, y: '-100%' });
+        gsap.to('.nav', { duration: 0.5, y: '-101%' });
         isNavHidden = true;
       }
     } else {

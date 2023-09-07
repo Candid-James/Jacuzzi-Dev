@@ -9,8 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   const submitButton = document.getElementById('submitButton');
-  const countrySelect = document.getElementById('Hot-Tub-Promotion-Country-Code');
   const zipCode = document.getElementById('Hot-Tub-Promotion-Zip-Code');
 
-  contactZipCodeValidation(submitButton, countrySelect, zipCode);
+  contactZipCodeValidation(submitButton, zipCode);
 });

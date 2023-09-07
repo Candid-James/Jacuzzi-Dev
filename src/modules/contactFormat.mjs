@@ -5,9 +5,9 @@
  * @param {HTMLInputElement} zipCodeInput - The input element for zip code.
  */
 
-export function contactZipCodeValidation(submitButton, countryCodeSelect, zipCodeInput) {
+export function contactZipCodeValidation(submitButton, zipCodeInput) {
   submitButton.addEventListener('click', function (event) {
-    var countryCode = countryCodeSelect.value;
+    var countryCode = document.querySelector("[j-element='country-code']").value;
     var zipCode = zipCodeInput.value.trim();
 
     if (countryCode !== 'CA' && isValidCAZip(zipCode)) {
