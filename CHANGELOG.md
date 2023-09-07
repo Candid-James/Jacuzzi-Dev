@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.14
+
+### Patch Changes
+
+- cfe0f5c: improved showPricing functionality
+
 ## 1.2.13
 
 ### Patch Changes
