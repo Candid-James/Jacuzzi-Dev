@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.17
+
+### Patch Changes
+
+- e48054d: Improved nav functionality
+
 ## 1.2.16
 
 ### Patch Changes
