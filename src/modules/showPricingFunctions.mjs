@@ -9,7 +9,7 @@
  */
 export function showPricingTrueTag(pricingTrueTag) {
   pricingTrueTag.forEach((el) => {
-    el.style.display = '';
+    el.style.display = 'block';
   });
 }
 
@@ -24,7 +24,7 @@ export function showPricingTrueTag(pricingTrueTag) {
  */
 export function showPricingFalseTag(falseTag) {
   falseTag.forEach((el) => {
-    el.style.display = '';
+    el.style.display = 'block';
   });
 }
 
@@ -48,4 +48,27 @@ export function updateCookie(cookieName, newValue) {
   if (!document.cookie.includes(cookieName)) {
     document.cookie = `${cookieName}=${newValue}; path=/`;
   }
+}
+
+/**
+ * Function to retrieve the value of a given cookie by its name.
+ *
+ * @returns {string|null} - The value of the cookie or null if not found.
+ */
+export function getCookieValue(cookieName) {
+  // Split the document's cookie string into an array of individual cookies.
+  var cookies = document.cookie.split(';');
+
+  // Loop through each cookie.
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i].trim();
+
+    // If the current cookie starts with the provided cookieName, extract its value.
+    if (cookie.indexOf(cookieName + '=') === 0) {
+      return cookie.substring(cookieName.length + 1);
+    }
+  }
+
+  // If the specified cookie isn't found, return null.
+  return null;
 }
