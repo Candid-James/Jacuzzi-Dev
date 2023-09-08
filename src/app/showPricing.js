@@ -32,11 +32,8 @@ function hidePricingTag() {
  */
 function checkCookie() {
   if (getCookieValue('show-pricing')) {
-    console.log('there is a cookie');
     showPricingTrueTag(pricingTrueTag);
   } else {
-    console.log('there is not a cookie');
-
     showPricingFalseTag(pricingFalseTag);
   }
 }
