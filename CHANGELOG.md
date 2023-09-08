@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.21
+
+### Patch Changes
+
+- a7fb20b: Another improvement to show pricing
+
 ## 1.2.20
 
 ### Patch Changes
