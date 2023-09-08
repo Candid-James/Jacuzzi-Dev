@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.19
+
+### Patch Changes
+
+- 45c1565: Adjusted showPricing
+
 ## 1.2.18
 
 ### Patch Changes
