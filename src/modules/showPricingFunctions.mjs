@@ -9,7 +9,9 @@
  */
 export function showPricingTrueTag(pricingTrueTag) {
   console.log('running show pricing true function');
+  console.log(pricingTrueTag);
   pricingTrueTag.forEach((el) => {
+    console.log(el);
     el.style.display = 'block';
   });
 }
