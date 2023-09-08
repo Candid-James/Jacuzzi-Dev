@@ -46,8 +46,8 @@ window.addEventListener('DOMContentLoaded', () => {
   // If the cookie has a value of 'true', the pricingTrueTag will be displayed.
   // Function to define the default behavior.
   function defaultBehaviour() {
-    // Hide all pricing tags by default.
-    hidePricingTag();
+    // // Hide all pricing tags by default.
+    // hidePricingTag();
 
     // Check for the 'show-pricing' cookie and display the appropriate tag.
     checkCookie();
