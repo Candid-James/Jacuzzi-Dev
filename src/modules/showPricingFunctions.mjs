@@ -8,6 +8,7 @@
  * @param {HTMLElement[]} pricingTrueTag - List of HTML elements to be displayed.
  */
 export function showPricingTrueTag(pricingTrueTag) {
+  console.log('running show pricing true function');
   pricingTrueTag.forEach((el) => {
     el.style.display = 'block';
   });
