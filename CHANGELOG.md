@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.18
+
+### Patch Changes
+
+- 68217b3: Fixed showPricing function
+- cca53db: removed console logs
+
 ## 1.2.17
 
 ### Patch Changes
