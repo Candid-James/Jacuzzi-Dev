@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.16
+
+### Patch Changes
+
+- d5c2346: Removed pricing flashing on page load
+
 ## 1.2.15
 
 ### Patch Changes
