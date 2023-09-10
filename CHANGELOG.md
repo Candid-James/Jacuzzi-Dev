@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.22
+
+### Patch Changes
+
+- a8c45d3: Added error handling to reveal pricing
+- ed4e5c4: added zip code validation to reveal pricing
+
 ## 1.2.21
 
 ### Patch Changes
