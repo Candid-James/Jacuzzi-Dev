@@ -3,9 +3,9 @@
  * @param {HTMLElement} submitButton - The submit button element.
  * @param {HTMLInputElement} zipCodeInput - The input element for zip code.
  */
-
 export function contactZipCodeValidation(submitButton, zipCodeInput) {
   submitButton.addEventListener('click', function (event) {
+    console.log('submit clicked');
     var countryCode = document.querySelector("[j-element='country-code']").value;
     var zipCode = zipCodeInput.value.trim();
 
@@ -23,6 +23,17 @@ export function contactZipCodeValidation(submitButton, zipCodeInput) {
 
     if (countryCode === 'CA' && !isValidCAZip(zipCode)) {
       alert('Not a valid Canada ZIP');
+      event.preventDefault();
+      return;
+    }
+
+    if (countryCode === '') {
+      const countryCodeWrapper = document.querySelector('.select_wrapper');
+      const errorText = countryCodeWrapper.nextElementSibling;
+      console.log(errorText);
+
+      errorText.style.opacity = 1;
+
       event.preventDefault();
       return;
     }
