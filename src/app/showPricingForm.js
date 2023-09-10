@@ -1,12 +1,19 @@
 // Importing required functions from the 'showPricingFunctions.mjs' module.
 import { showPricingTrueTag, updateCookie } from 'src/modules/showPricingFunctions.mjs';
 
+import { contactZipCodeValidation } from 'src/modules/contactFormat.mjs';
+
 window.addEventListener('DOMContentLoaded', () => {
   // Get all forms that have the 'j-element' attribute set to 'reveal-pricing'.
   const form = document.querySelectorAll('[j-element="reveal-pricing"]');
 
   // Get all elements that have the 'j-element' attribute set to 'show-pricing-true'.
   const pricingTrueTag = document.querySelectorAll('[j-element="show-pricing-true"]');
+
+  contactZipCodeValidation(
+    document.querySelector('#reveal-submit'),
+    document.querySelector('#Reveal-Pricing-Zip')
+  );
 
   // Get all buttons that have the 'j-element' attribute set to 'pricing-trigger'.
   const triggerButtons = document.querySelectorAll('[j-element="pricing-trigger"]');

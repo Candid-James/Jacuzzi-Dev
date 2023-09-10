@@ -1,7 +1,6 @@
 /**
  * Validates the zip code based on the selected country code.
  * @param {HTMLElement} submitButton - The submit button element.
- * @param {HTMLSelectElement} countryCodeSelect - The select element for country code.
  * @param {HTMLInputElement} zipCodeInput - The input element for zip code.
  */
 
