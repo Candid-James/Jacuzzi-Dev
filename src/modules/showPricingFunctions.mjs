@@ -75,3 +75,22 @@ export function getCookieValue(cookieName) {
   // If the specified cookie isn't found, return null.
   return null;
 }
+
+export function swapPriceButtons() {
+  if (getCookieValue('show-pricing')) {
+    const hideElements = document.querySelectorAll("[j-element='hide-pricing']");
+    const altButton = document.querySelector("[j-element='pricing-trigger']");
+
+    if (altButton) {
+      altButton.textContent = 'Find a dealer';
+      altButton.setAttribute('href', '/find-a-dealer');
+      altButton.setAttribute('j-element', '');
+    }
+
+    if (hideElements) {
+      hideElements.forEach((e) => {
+        e.remove();
+      });
+    }
+  }
+}

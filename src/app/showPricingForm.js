@@ -1,6 +1,10 @@
 // Importing required functions from the 'showPricingFunctions.mjs' module.
 import { contactZipCodeValidation } from 'src/modules/contactFormat.mjs';
-import { showPricingTrueTag, updateCookie } from 'src/modules/showPricingFunctions.mjs';
+import {
+  showPricingTrueTag,
+  swapPriceButtons,
+  updateCookie,
+} from 'src/modules/showPricingFunctions.mjs';
 
 window.addEventListener('DOMContentLoaded', () => {
   // Get all forms that have the 'j-element' attribute set to 'reveal-pricing'.
@@ -83,6 +87,8 @@ window.addEventListener('DOMContentLoaded', () => {
       // Call the helper function to display the correct pricing tag elements.
       showPricingTrueTag(pricingTrueTag);
 
+      swapPriceButtons();
+
       const banner = document.querySelector('.pricing_banner-wrapper');
 
       banner.style.transform = 'translateY(0%)';
@@ -90,7 +96,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         banner.style.transform = 'translateY(-100%)';
-      }, 3000);
+      }, 5000);
     }
   });
 });
