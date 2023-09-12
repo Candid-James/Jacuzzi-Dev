@@ -28,10 +28,15 @@ export function contactZipCodeValidation(submitButton, zipCodeInput) {
     }
 
     if (countryCode === '') {
+      console.log('country code is:' + countryCode);
       const countryCodeWrapper = document.querySelector('.select_wrapper');
       const errorText = countryCodeWrapper.nextElementSibling;
-      console.log(errorText);
 
+      if (!errorText) {
+      alert('Please select a country');
+      event.preventDefault();
+      return
+      }
       errorText.style.opacity = 1;
 
       event.preventDefault();
