@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.24
+
+### Patch Changes
+
+- 17a80d5: General Improvement
+
 ## 1.2.23
 
 ### Patch Changes
