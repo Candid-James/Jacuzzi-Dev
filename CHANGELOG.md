@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.23
+
+### Patch Changes
+
+- 94e844b: Improved form functions, added country code validation to all forms
+
 ## 1.2.22
 
 ### Patch Changes
