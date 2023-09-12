@@ -28,6 +28,7 @@ export function featureItemSlider() {
 
       // If a wrapper exists for the current slider, initialize the Swiper slider with the extracted classes and predefined settings.
       if (wrapper) {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const swiper = new Swiper(wrapper, {
           speed: 400, // Animation speed when sliding.
           spaceBetween: 16, // Space between slides.

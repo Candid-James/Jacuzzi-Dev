@@ -4,8 +4,12 @@
     "rootDir": ".",
     "baseUrl": "./",
     "paths": {
-      "$utils/*": ["src/modules/*"]
+      "$utils/*": [
+        "src/modules/*"
+      ]
     },
-    "types": ["@finsweet/ts-utils"]
+    "types": [
+      "@finsweet/ts-utils"
+    ]
   }
 }

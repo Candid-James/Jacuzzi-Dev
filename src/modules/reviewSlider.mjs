@@ -22,7 +22,7 @@ export function initReviewSlider() {
     const list = e.querySelector(`[${identifier}-element='list']`);
     const item = e.querySelectorAll(`[${identifier}-element='item']`);
     const nav = e.querySelector(`[${identifier}-element='navigation']`);
-    const nextArrow = nav.querySelector(`[${identifier}-element='next-arrow']`);
+    const nextArrow = nav.queryelector(`[${identifier}-element='next-arrow']`);
     const prevArrow = nav.querySelector(`[${identifier}-element='prev-arrow']`);
 
     // Fetch class names using the getFirstWord function for Swiper's configuration

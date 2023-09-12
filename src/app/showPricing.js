@@ -1,8 +1,8 @@
 // Import required functions from the 'showPricingFunctions.mjs' module.
 import {
+  getCookieValue,
   showPricingFalseTag,
   showPricingTrueTag,
-  getCookieValue,
 } from 'src/modules/showPricingFunctions.mjs';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -33,7 +33,6 @@ window.addEventListener('DOMContentLoaded', () => {
    */
   function checkCookie() {
     if (getCookieValue('show-pricing')) {
-      console.log('cookie value found');
       showPricingTrueTag(pricingTrueTag);
     } else {
       showPricingFalseTag(pricingFalseTag);
@@ -47,7 +46,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Function to define the default behavior.
   function defaultBehaviour() {
     // // Hide all pricing tags by default.
-    // hidePricingTag();
+    hidePricingTag();
 
     // Check for the 'show-pricing' cookie and display the appropriate tag.
     checkCookie();

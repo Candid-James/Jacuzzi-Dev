@@ -1,7 +1,6 @@
 // Importing required functions from the 'showPricingFunctions.mjs' module.
-import { showPricingTrueTag, updateCookie } from 'src/modules/showPricingFunctions.mjs';
-
 import { contactZipCodeValidation } from 'src/modules/contactFormat.mjs';
+import { showPricingTrueTag, updateCookie } from 'src/modules/showPricingFunctions.mjs';
 
 window.addEventListener('DOMContentLoaded', () => {
   // Get all forms that have the 'j-element' attribute set to 'reveal-pricing'.
@@ -87,8 +86,11 @@ window.addEventListener('DOMContentLoaded', () => {
       const banner = document.querySelector('.pricing_banner-wrapper');
 
       banner.style.transform = 'translateY(0%)';
-
       closeButton.click();
+
+      setTimeout(() => {
+        banner.style.transform = 'translateY(-100%)';
+      }, 3000);
     }
   });
 });

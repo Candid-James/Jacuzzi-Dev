@@ -1,3 +1,5 @@
+/* eslint-disable no-console*/
+
 /**
  * Validates the zip code based on the selected country code.
  * @param {HTMLElement} submitButton - The submit button element.
@@ -33,12 +35,11 @@ export function contactZipCodeValidation(submitButton, zipCodeInput) {
       const errorText = countryCodeWrapper.nextElementSibling;
 
       if (!errorText) {
-      alert('Please select a country');
-      event.preventDefault();
-      return
+        alert('Please select a country');
+        event.preventDefault();
+        return;
       }
       errorText.style.opacity = 1;
-
       event.preventDefault();
       return;
     }

@@ -13,10 +13,9 @@ if (getCookieValue('show-pricing')) {
 
 function styleGridItems() {
   const gridContainer = document.querySelector('#features-grid'); // Replace with the appropriate selector for your grid container
-  const children = gridContainer.children;
+  const { children } = gridContainer;
 
   if (children.length === 5) {
-    console.log('there is 5');
     // Apply styles for 5 elements
     children[0].style.cssText = `
             grid-column-start: span 4;
@@ -53,8 +52,6 @@ function styleGridItems() {
             grid-row-end: span 1;
         `;
   } else if (children.length === 4) {
-    console.log('there is 4');
-
     // Apply styles for the remaining 4 elements
     children[0].style.cssText = `
             grid-column-start: span 4;
