@@ -51,9 +51,25 @@ export function initGoogleReviews(callback) {
     element.style.display = 'none';
   }
 
+  async function callMapsApi(context) {
+    const placeID = context;
+    const fields = 'name,rating,reviews,opening_hours,formatted_address,website,url';
+    const apiKey = 'AIzaSyD_khPerIUXq2Zj5DUxRuktjJZMx4JYkzw';
+    const url = `https://maps.googleapis.com/maps/api/place/details/json?key=${apiKey}&place_id=${placeID}&fields=${fields}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      return data.result;
+    } catch (error) {
+      console.error('There was an error fetching data:', error);
+      throw error; // or return an appropriate fallback or error message
+    }
+  }
+
   // Fetch Google place details using a custom endpoint
-  $.get('https://dev--d1-spas--candidleap.autocode.dev/', { googleID }).then((res) => {
-    let reviews = res.reviews;
+  callMapsApi(googleID).then((res) => {
+    let { reviews } = res.reviews;
 
     // Populate place details on the UI
     document.querySelector('[data-text="address"]').textContent = res.formatted_address;

@@ -1,7 +1,7 @@
 // Importing necessary modules and functions
+import { getFirstWord } from 'src/modules/getClassName.mjs'; // Custom function to retrieve the first word from a given string
 import { Swiper } from 'swiper'; // Base Swiper library for the slider functionality
 import { Navigation } from 'swiper/modules'; // Navigation module from Swiper for slider controls
-import { getFirstWord } from 'src/modules/getClassName.mjs'; // Custom function to retrieve the first word from a given string
 
 /**
  * Initializes the review slider on the page.
@@ -22,7 +22,7 @@ export function initReviewSlider() {
     const list = e.querySelector(`[${identifier}-element='list']`);
     const item = e.querySelectorAll(`[${identifier}-element='item']`);
     const nav = e.querySelector(`[${identifier}-element='navigation']`);
-    const nextArrow = nav.queryelector(`[${identifier}-element='next-arrow']`);
+    const nextArrow = nav.querySelector(`[${identifier}-element='next-arrow']`);
     const prevArrow = nav.querySelector(`[${identifier}-element='prev-arrow']`);
 
     // Fetch class names using the getFirstWord function for Swiper's configuration
@@ -39,6 +39,7 @@ export function initReviewSlider() {
     }
 
     // Initialize the Swiper instance with required configurations
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const swiper = new Swiper(wrapper, {
       modules: [Navigation],
       speed: 650,
