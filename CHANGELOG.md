@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.27
+
+### Patch Changes
+
+- 30c9e27: Improved simple article popout to run scripts when using ajax
+
 ## 1.2.26
 
 ### Patch Changes
