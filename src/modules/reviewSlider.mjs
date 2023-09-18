@@ -14,7 +14,6 @@ export function initReviewSlider() {
 
   // Select all slider components on the page using the custom attribute
   const sliders = document.querySelectorAll(`[${identifier}-element='slider-component']`);
-
   // Iterate over each detected slider
   sliders.forEach((e) => {
     // Fetch primary components within each slider using the custom attribute
@@ -29,42 +28,42 @@ export function initReviewSlider() {
     const listClass = getFirstWord(list);
     const itemClass = getFirstWord(item[0]);
 
-    // If there are more than 2 slide items and a wrapper is present
-    if (item.length > 2 && wrapper) {
+    // Initialize the Swiper instance with required configurations
+
+    if (item.length > 3) {
       for (let i = 0; i < item.length; i++) {
         // Duplicate each slide item and append it to the list
         const clonedItem = item[i].cloneNode(true);
         list.appendChild(clonedItem);
       }
-    }
 
-    // Initialize the Swiper instance with required configurations
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const swiper = new Swiper(wrapper, {
-      modules: [Navigation],
-      speed: 650,
-      spaceBetween: 16,
-      slidesPerView: 3,
-      loop: true,
-      direction: 'horizontal',
-      wrapperClass: listClass,
-      slideClass: itemClass,
-      navigation: {
-        nextEl: nextArrow,
-        prevEl: prevArrow,
-      },
-      // Breakpoints for responsive design, which control how many slides are visible based on viewport width
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const swiper = new Swiper(wrapper, {
+        modules: [Navigation],
+        speed: 650,
+        spaceBetween: 16,
+        slidesPerView: 3,
+        loop: true,
+        direction: 'horizontal',
+        wrapperClass: listClass,
+        slideClass: itemClass,
+        navigation: {
+          nextEl: nextArrow,
+          prevEl: prevArrow,
         },
-        767: {
-          slidesPerView: 2,
+        // Breakpoints for responsive design, which control how many slides are visible based on viewport width
+        breakpoints: {
+          320: {
+            slidesPerView: 1,
+          },
+          767: {
+            slidesPerView: 2,
+          },
+          980: {
+            slidesPerView: 3,
+          },
         },
-        980: {
-          slidesPerView: 3,
-        },
-      },
-    });
+      });
+    }
   });
 }

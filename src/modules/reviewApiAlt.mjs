@@ -69,7 +69,7 @@ export function initGoogleReviews(callback) {
   }
 
   // Fetch Google place details using a custom endpoint
-  $.get('https://dev--d1-spas--candidleap.autocode.dev/', { googleID }).then((res) => {
+  callMapsApi(googleID).then((res) => {
     let { reviews } = res;
 
     // Populate place details on the UI

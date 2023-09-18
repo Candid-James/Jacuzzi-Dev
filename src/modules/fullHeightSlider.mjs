@@ -1,7 +1,7 @@
 // We're importing the main Swiper class, a module for the scrollbar, and a helper function.
+import { getFirstWord } from 'src/modules/getClassName.mjs';
 import { Swiper } from 'swiper';
 import { Scrollbar } from 'swiper/modules';
-import { getFirstWord } from 'src/modules/getClassName.mjs';
 
 /**
  * Function to create a full height slider.
@@ -29,7 +29,8 @@ export function createFullHeightSlider() {
 
     // Ensure there's at least one item and a wrapper present before initializing Swiper.
     if (item.length > 0 && wrapper) {
-      // Create a new Swiper instance for our current slider.
+      // Create a new Swiper instance for our current slider
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const swiper = new Swiper(wrapper, {
         // Include the scrollbar module.
         modules: [Scrollbar],

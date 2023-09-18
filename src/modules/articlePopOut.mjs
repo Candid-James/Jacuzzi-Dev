@@ -80,6 +80,7 @@ export function setPopOutArticles() {
             // Display the fetched article in the modal.
             modalWrapper.classList.add('is-open');
             contentContainer.appendChild(data);
+            loadNewScripts();
           });
       } catch (error) {
         console.error('An error occurred while fetching the article:', error);
@@ -91,6 +92,7 @@ export function setPopOutArticles() {
   function updatePageWithNewData(data) {
     modalWrapper.classList.add('is-open');
     contentContainer.appendChild(data);
+    loadNewScripts();
   }
 
   // Handle the potential closing of the modal.
@@ -98,6 +100,12 @@ export function setPopOutArticles() {
     if (e.target === modalWrapper) {
       modalClose();
     }
+  }
+
+  function loadNewScripts() {
+    const newScript = document.querySelector("[data-script='ajax-script']");
+    const scriptURL = newScript.getAttribute('src');
+    $.getScript(scriptURL);
   }
 
   // Close the modal and clear its content.
