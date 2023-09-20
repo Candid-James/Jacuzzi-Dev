@@ -26,6 +26,7 @@ function initMap() {
         const distance = getDistance(userLat, userLng, dealerLat, dealerLng);
 
         if (distance < closestDistance) {
+          console.log('this has run');
           closestDistance = distance;
           closestDealer = dealer;
         }

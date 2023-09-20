@@ -1,7 +1,7 @@
 // We're importing the main Swiper class, a module for navigation, and a helper function.
+import { getFirstWord } from 'src/modules/getClassName.mjs';
 import { Swiper } from 'swiper';
 import { Navigation } from 'swiper/modules';
-import { getFirstWord } from 'src/modules/getClassName.mjs';
 
 /**
  * Function to create a slider for hot tub options.

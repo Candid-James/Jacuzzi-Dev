@@ -14,7 +14,7 @@ export function setPopOutArticles() {
   modalWrapper.addEventListener('click', handleModalClick);
 
   // Identify all buttons that could potentially trigger the fetching/display of an article.
-  const button = document.querySelectorAll('#demo-button');
+  const button = document.querySelectorAll("j-element='popout-trigger'");
 
   // A variable to store prefetched article data, ensuring that data isn't fetched more than once.
   let prefetchedData = null;
