@@ -67,7 +67,6 @@ export function initGoogleReviews(callback) {
       throw error; // or return an appropriate fallback or error message
     }
   }
-
   // Fetch Google place details using a custom endpoint
   $.get('https://dev--d1-spas--candidleap.autocode.dev/', { googleID }).then((res) => {
     let { reviews } = res;

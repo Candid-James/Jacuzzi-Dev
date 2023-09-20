@@ -39,6 +39,7 @@ export function createHotTubOptionSlider() {
       }
 
       // Create a new Swiper instance for our current slider.
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const swiper = new Swiper(wrapper, {
         // Include the navigation module.
         modules: [Navigation],
