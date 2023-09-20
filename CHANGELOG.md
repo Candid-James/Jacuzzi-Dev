@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.28
+
+### Patch Changes
+
+- 766aeb5: Improved hot tub page
+
 ## 1.2.27
 
 ### Patch Changes
