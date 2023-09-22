@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.29
+
+### Patch Changes
+
+- 669b90c: Setup hot tub range grid styling
+
 ## 1.2.28
 
 ### Patch Changes
