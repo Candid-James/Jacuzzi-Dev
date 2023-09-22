@@ -3,6 +3,7 @@ export function styleGridItems() {
   const { children } = gridContainer;
 
   if (children.length === 5) {
+    console.log('5');
     // Apply styles for 5 elements
     children[0].style.cssText = `
               grid-column-start: span 4;
