@@ -3,9 +3,9 @@ import { createHotTubOptionSlider } from 'src/modules/hotTubOptionSlider.mjs';
 import { styleGridItems } from 'src/modules/styleGrid.js';
 
 function initializeScript() {
+  styleGridItems();
   createHotTubOptionSlider();
   createFullHeightSlider();
-  styleGridItems();
 }
 
 // Check if the DOM is already loaded
