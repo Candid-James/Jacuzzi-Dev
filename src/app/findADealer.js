@@ -21,14 +21,15 @@ function initMap() {
       let url = '';
 
       dealerLocations.forEach(function (dealer) {
-        const dealerLat = parseFloat(dealer.getAttribute('cl-dealer-latitude'));
-        const dealerLng = parseFloat(dealer.getAttribute('cl-dealer-longitude'));
+        const dealerLat = dealer.getAttribute('cl-dealer-latitude');
+        const dealerLng = dealer.getAttribute('cl-dealer-longitude');
         const distance = getDistance(userLat, userLng, dealerLat, dealerLng);
 
         if (distance < closestDistance) {
-          console.log('this has run');
           closestDistance = distance;
           closestDealer = dealer;
+        } else {
+          return;
         }
         url = closestDealer.querySelector('[data-url]').getAttribute('data-url');
         window.location.href = url;
