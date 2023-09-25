@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.32
+
+### Patch Changes
+
+- 43dbe85: Dealer Detail improved
+
 ## 1.2.31
 
 ### Patch Changes
