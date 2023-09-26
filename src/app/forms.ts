@@ -10,32 +10,32 @@ button?.addEventListener('click', function (e: MouseEvent) {
   e.preventDefault();
   // Prepare the datas
   const formData: { [key: string]: string | boolean } = {
-    firstName: (document.getElementById('FirstName') as HTMLInputElement)?.value ?? 'null',
-    lastName: (document.getElementById('LastName') as HTMLInputElement)?.value ?? 'null',
-    email: (document.getElementById('Email') as HTMLInputElement)?.value ?? 'null',
-    tel: (document.getElementById('Phone') as HTMLInputElement)?.value ?? 'null',
-    zipCode: (document.getElementById('PostalCode') as HTMLInputElement)?.value ?? 'null',
-    country: (document.getElementById('CountryCode') as HTMLInputElement)?.value ?? 'null',
-    reasonIntendedUse: (document.getElementById('Usage__c') as HTMLInputElement)?.value ?? 'null',
+    firstName: (document.getElementById('FirstName') as HTMLInputElement)?.value ?? 'James',
+    lastName: (document.getElementById('LastName') as HTMLInputElement)?.value ?? 'Battye',
+    email: (document.getElementById('Email') as HTMLInputElement)?.value ?? 'test@test.com',
+    tel: (document.getElementById('Phone') as HTMLInputElement)?.value ?? '07932615051',
+    zipCode: (document.getElementById('PostalCode') as HTMLInputElement)?.value ?? '79120',
+    country: (document.getElementById('CountryCode') as HTMLInputElement)?.value ?? 'US',
+    reasonIntendedUse: (document.getElementById('Usage__c') as HTMLInputElement)?.value ?? 'Yes',
     comments:
-      (document.getElementById('Trade_In_Comments__c') as HTMLInputElement)?.value ?? 'null',
+      (document.getElementById('Trade_In_Comments__c') as HTMLInputElement)?.value ?? 'A Value',
     salesAlerts: (document.getElementById('Sale_Alert__c') as HTMLInputElement)?.checked ?? false,
     productInterest:
-      (document.getElementById('Product_Name__c') as HTMLInputElement)?.value ?? 'null',
+      (document.getElementById('Product_Name__c') as HTMLInputElement)?.value ?? 'A Value',
     contactPreference:
-      (document.getElementById('Contact_Preference__c') as HTMLInputElement)?.value ?? 'null',
+      (document.getElementById('Contact_Preference__c') as HTMLInputElement)?.value ?? 'A Value',
     brand_interest:
-      (document.getElementById('Brand_Interest__c') as HTMLInputElement)?.value ?? 'null',
+      (document.getElementById('Brand_Interest__c') as HTMLInputElement)?.value ?? 'A Value',
     Product_Family__c:
-      (document.getElementById('Product_Family__c') as HTMLInputElement)?.value ?? 'null',
-    Is_PPC: (document.getElementById('Is_PPC_Campaign__c') as HTMLInputElement)?.value ?? 'null',
-    Language__c: (document.getElementById('Language__c') as HTMLInputElement)?.value ?? 'null',
+      (document.getElementById('Product_Family__c') as HTMLInputElement)?.value ?? 'A Value',
+    Is_PPC: (document.getElementById('Is_PPC_Campaign__c') as HTMLInputElement)?.value ?? 'A Value',
+    Language__c: (document.getElementById('Language__c') as HTMLInputElement)?.value ?? 'A Value',
     Lead_Category__c:
-      (document.getElementById('Lead_Category__c') as HTMLInputElement)?.value ?? 'null',
-    Lead_Source: (document.getElementById('LeadSource') as HTMLInputElement)?.value ?? 'null',
-    Lead_Type__c: (document.getElementById('Lead_Type__c') as HTMLInputElement)?.value ?? 'null',
+      (document.getElementById('Lead_Category__c') as HTMLInputElement)?.value ?? 'A Value',
+    Lead_Source: (document.getElementById('LeadSource') as HTMLInputElement)?.value ?? 'A Value',
+    Lead_Type__c: (document.getElementById('Lead_Type__c') as HTMLInputElement)?.value ?? 'A Value',
     Product_Type__c:
-      (document.getElementById('Product_Type__c') as HTMLInputElement)?.value ?? 'null',
+      (document.getElementById('Product_Type__c') as HTMLInputElement)?.value ?? 'A Value',
   };
 
   // Convert formData values to strings
@@ -65,5 +65,5 @@ button?.addEventListener('click', function (e: MouseEvent) {
       console.error(error);
     });
 
-  // console.log(formData);
+  console.log(formData);
 });
