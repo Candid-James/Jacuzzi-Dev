@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.37
+
+### Patch Changes
+
+- cedd49b: Squashed bug on hot tub range page
+
 ## 1.2.36
 
 ### Patch Changes
