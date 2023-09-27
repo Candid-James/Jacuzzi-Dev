@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.38
+
+### Patch Changes
+
+- 821d71b: Added Article popout
+
 ## 1.2.37
 
 ### Patch Changes
