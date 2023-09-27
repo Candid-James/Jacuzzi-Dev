@@ -13,7 +13,7 @@ if (document.readyState === 'loading') {
   // DOM is still loading, use regular 'DOMContentLoaded' event listener
   window.addEventListener('DOMContentLoaded', () => {
     console.log('cold start');
-    initializeScript;
+    initializeScript();
   });
 } else {
   // DOM is already loaded, execute the script immediately
