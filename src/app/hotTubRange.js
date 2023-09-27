@@ -1,3 +1,4 @@
+import { setPopOutArticles } from 'src/modules/articlePopOut.mjs';
 import { createFullHeightSlider } from 'src/modules/fullHeightSlider.mjs';
 import { createHotTubOptionSlider } from 'src/modules/hotTubOptionSlider.mjs';
 import { styleGridItems } from 'src/modules/styleGrid.js';
@@ -6,6 +7,7 @@ function initializeScript() {
   styleGridItems();
   createHotTubOptionSlider();
   createFullHeightSlider();
+  setPopOutArticles();
 }
 
 // Check if the DOM is already loaded
