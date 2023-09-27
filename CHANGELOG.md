@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.34
+
+### Patch Changes
+
+- cfe8476: removed scrollbar module from full height slider
+
 ## 1.2.33
 
 ### Patch Changes
