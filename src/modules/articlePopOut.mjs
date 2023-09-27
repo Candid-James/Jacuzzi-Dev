@@ -54,6 +54,9 @@ export function setPopOutArticles() {
     }, 150);
   }
 
+  // TODO: Need to make the reveal pricing form and article popout not collide. Idea is to have both hidden on load
+  // and then to hide and show the right container depending on what the user clicked
+
   // Handles the button click to either use prefetched article content or fetch it if not available.
   function handleClick(e) {
     e.preventDefault();

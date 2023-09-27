@@ -22,11 +22,35 @@ export function createHotTubOptionSlider() {
     console.log('slider element', e);
     // Find the main wrapper, list, items, and navigation elements inside the current slider.
     const wrapper = e.querySelector(`[${identifier}-element='wrapper']`);
+    if (!wrapper) {
+      console.error('no wrapper');
+      return;
+    }
     const list = e.querySelector(`[${identifier}-element='list']`);
+    if (!list) {
+      console.error('no list');
+      return;
+    }
     const item = e.querySelectorAll(`[${identifier}-element='item']`);
+    if (!item) {
+      console.error('no item');
+      return;
+    }
     const nav = e.querySelector(`[${identifier}-element='navigation']`);
+    if (!nav) {
+      console.error('no nav');
+      return;
+    }
     const nextArrow = nav.querySelector(`[${identifier}-element='next-arrow']`);
+    if (!nextArrow) {
+      console.error('no nextArrow');
+      return;
+    }
     const prevArrow = nav.querySelector(`[${identifier}-element='prev-arrow']`);
+    if (!prevArrow) {
+      console.error('no prevArrow');
+      return;
+    }
 
     // Extract class names using our helper function. These will be used by Swiper.
     const listClass = getFirstWord(list);
