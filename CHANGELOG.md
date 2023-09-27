@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.36
+
+### Patch Changes
+
+- 2b82e3b: More adjustments to hot tub range
+
 ## 1.2.35
 
 ### Patch Changes
