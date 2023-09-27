@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.33
+
+### Patch Changes
+
+- 7d12b2b: All Tubs Filter Done
+
 ## 1.2.32
 
 ### Patch Changes
