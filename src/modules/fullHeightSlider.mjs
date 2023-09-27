@@ -1,7 +1,6 @@
 // We're importing the main Swiper class, a module for the scrollbar, and a helper function.
 import { getFirstWord } from 'src/modules/getClassName.mjs';
 import { Swiper } from 'swiper';
-import { Scrollbar } from 'swiper/modules';
 
 /**
  * Function to create a full height slider.
@@ -32,8 +31,6 @@ export function createFullHeightSlider() {
       // Create a new Swiper instance for our current slider
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const swiper = new Swiper(wrapper, {
-        // Include the scrollbar module.
-        modules: [Scrollbar],
         // Define basic Swiper settings.
         speed: 450,
         spaceBetween: 0,
@@ -43,17 +40,7 @@ export function createFullHeightSlider() {
         // Use our extracted class names.
         wrapperClass: listClass,
         slideClass: itemClass,
-        // Define scrollbar settings.
-        scrollbar: {
-          el: '.features-slider_navigation',
-          dragClass: 'features-slider_scrollbar',
-          hide: false,
-        },
       });
-    } else {
-      // If there are no items or if the wrapper is missing, remove the scrollbar element.
-      const scrollbarElement = e.querySelector('.features-slider_navigation');
-      scrollbarElement.remove();
     }
   });
 }

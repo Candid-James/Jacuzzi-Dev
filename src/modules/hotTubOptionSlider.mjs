@@ -30,6 +30,12 @@ export function createHotTubOptionSlider() {
     const listClass = getFirstWord(list);
     const itemClass = getFirstWord(item[0]);
 
+    if (item.length < 3) {
+      console.log('removing nav');
+      nav.remove();
+      return;
+    }
+
     // Ensure there are more than 2 items and a wrapper present before proceeding.
     if (item.length > 2 && wrapper) {
       // Clone each item in the slider. This can be useful for sliders that need to loop seamlessly.
@@ -67,9 +73,6 @@ export function createHotTubOptionSlider() {
           },
         },
       });
-    } else {
-      // If there are 2 or fewer items, or if the wrapper is missing, remove the navigation element.
-      nav.remove();
     }
   });
 }
