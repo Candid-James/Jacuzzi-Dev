@@ -54,6 +54,4 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Execute the default behavior.
     defaultBehaviour();
-
-    console.log('test github')
 });
