@@ -219,6 +219,11 @@ export function initGoogleReviews(callback) {
                         }
                     }
                 }
+
+                if (countedReviews > 3) {
+                    // Execute the callback once all reviews are processed
+                    callback();
+                }
             }
 
             hide(document.querySelector('[data-lottie="loading"]'));
