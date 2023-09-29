@@ -71,70 +71,251 @@ export function initGoogleReviews(callback) {
     // }
 
     // Fetch Google place details using a custom endpoint
-    $.get('https://dev--d1-spas--candidleap.autocode.dev/', { googleID }).then((res) => {
-        let { reviews } = res;
+    // $.get('https://dev--d1-spas--candidleap.autocode.dev/', { googleID }).then((res) => {
+    //     let { reviews } = res;
 
-        if (!reviews) {
-            const reviewSection = document.querySelector('.section_google-reviews');
-            reviewSection.remove();
+    //     if (!reviews) {
+    //         const reviewSection = document.querySelector('.section_google-reviews');
+    //         reviewSection.remove();
+    //     }
+
+    //     if (res.formatted_address) {
+    //         document.querySelector('[data-text="address"]').innerHTML = res.formatted_address;
+    //     } else {
+    //         document.querySelector('[data-text="address"]').remove();
+    //     }
+
+    //     if (res.website) {
+    //         document.querySelector('[data-button="website"]').setAttribute('href', res.website);
+    //     } else {
+    //         document.querySelector('[data-button="website"]').remove();
+    //     }
+
+    //     if (res.url) {
+    //         // Populate place details on the UI
+    //         document.querySelector('[data-button="direction"]').setAttribute('href', res.url);
+    //     } else {
+    //         document.querySelector('[data-button="direction"]').remove();
+    //     }
+
+    //     // Proceed if there are reviews to be displayed
+    //     if (reviews) {
+    //         appendReviews(reviews.length);
+
+    //         // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    //         let countedReviews = 0;
+
+    //         // Iterate over the reviews to display them on the UI
+    //         reviews.forEach((review, x) => {
+    //             if (reviews.rating < 3) {
+    //                 return;
+    //             }
+    //             countedReviews += 1;
+    //             // Update review contents
+    //             document.querySelectorAll('[data-text="name"]')[x].textContent = review.author_name;
+    //             document.querySelectorAll('[data-text="date"]')[x].textContent =
+    //                 review.relative_time_description;
+    //             document.querySelectorAll('[data-text="review"]')[x].textContent = review.text;
+
+    //             // Set the reviewer's profile picture
+    //             const imageElements = document.querySelectorAll('[data-div="image"]');
+    //             imageElements[x].setAttribute('src', review.profile_photo_url);
+    //             imageElements[x].setAttribute('srcset', review.profile_photo_url);
+
+    //             // Display stars representing the reviewer's rating
+    //             const starsDiv = document.querySelectorAll('[data-div="stars"]')[x];
+    //             const starIcons = [...starsDiv.children];
+    //             starIcons.slice(review.rating).forEach((star) => starsDiv.removeChild(star));
+    //         });
+
+    //         if (countedReviews > 3) {
+    //             // Execute the callback once all reviews are processed
+    //             callback();
+    //         }
+    //     }
+    //     // Display the main content after loading and processing the reviews
+    //     hide(document.querySelector('[data-lottie="loading"]'));
+    //     fadeIn(document.querySelector('[data-div="main"]'));
+    // });
+
+
+    function appendReview(idx) {
+        for (x = 0; x < idx - 1; x++) {
+            // Get the first element with attribute data-div="review"
+            const reviewDiv = document.querySelector('[data-div="review"]:first-child');
+            // Clone the source element
+            const clonedElement = reviewDiv.cloneNode(true);
+            // Get the parent element with attribute data-div="review-wrapper"
+            const reviewWrapper = document.querySelector('[data-div="review-wrapper"]');
+            // Append the cloned element to the target wrapper
+            reviewWrapper.appendChild(clonedElement);
         }
+    }
 
-        if (res.formatted_address) {
-            document.querySelector('[data-text="address"]').innerHTML = res.formatted_address;
-        } else {
-            document.querySelector('[data-text="address"]').remove();
-        }
+    //custom UI
+    function fadeIn(element) {
+        element.style.opacity = 0;
+        element.style.display = "block";
+        const fadeInInterval = setInterval(function() {
+            if (element.style.opacity < 1) {
+                element.style.opacity = Number(element.style.opacity) + 0.1;
+            } else {
+                clearInterval(fadeInInterval);
+            }
+        }, 50); // Adjust the time interval (ms) for a smoother fade-in effect
+    }
 
-        if (res.website) {
-            document.querySelector('[data-button="website"]').setAttribute('href', res.website);
-        } else {
-            document.querySelector('[data-button="website"]').remove();
-        }
+    function hide(element) {
+        element.style.display = "none";
+    }
+    // end of custom UI
 
-        if (res.url) {
-            // Populate place details on the UI
-            document.querySelector('[data-button="direction"]').setAttribute('href', res.url);
-        } else {
-            document.querySelector('[data-button="direction"]').remove();
-        }
+    //swiper slider
+    function initReviewSlider() {
+        // Define the custom attribute identifier for slider components
+        const identifier = 'reviews';
 
-        // Proceed if there are reviews to be displayed
-        if (reviews) {
-            appendReviews(reviews.length);
+        // Select all slider components on the page using the custom attribute
+        const sliders = document.querySelectorAll(`[${identifier}-element='slider-component']`);
+        // Iterate over each detected slider
+        sliders.forEach((e) => {
+            // Fetch primary components within each slider using the custom attribute
+            const wrapper = e.querySelector(`[${identifier}-element='wrapper']`);
+            const list = e.querySelector(`[${identifier}-element='list']`);
+            const item = e.querySelectorAll(`[${identifier}-element='item']`);
+            const nav = e.querySelector(`[${identifier}-element='navigation']`);
+            const nextArrow = nav.querySelector(`[${identifier}-element='next-arrow']`);
+            const prevArrow = nav.querySelector(`[${identifier}-element='prev-arrow']`);
 
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars
-            let countedReviews = 0;
+            // Fetch class names using the getFirstWord function for Swiper's configuration
+            const listClass = getFirstWord(list);
+            const itemClass = getFirstWord(item[0]);
 
-            // Iterate over the reviews to display them on the UI
-            reviews.forEach((review, x) => {
-                if (reviews.rating < 3) {
-                    return;
+            // Initialize the Swiper instance with required configurations
+
+            if (item.length > 3) {
+                for (let i = 0; i < item.length; i++) {
+                    // Duplicate each slide item and append it to the list
+                    const clonedItem = item[i].cloneNode(true);
+                    list.appendChild(clonedItem);
                 }
-                countedReviews += 1;
-                // Update review contents
-                document.querySelectorAll('[data-text="name"]')[x].textContent = review.author_name;
-                document.querySelectorAll('[data-text="date"]')[x].textContent =
-                    review.relative_time_description;
-                document.querySelectorAll('[data-text="review"]')[x].textContent = review.text;
 
-                // Set the reviewer's profile picture
-                const imageElements = document.querySelectorAll('[data-div="image"]');
-                imageElements[x].setAttribute('src', review.profile_photo_url);
-                imageElements[x].setAttribute('srcset', review.profile_photo_url);
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                const swiper = new Swiper(wrapper, {
+                    modules: [Navigation],
+                    speed: 650,
+                    spaceBetween: 16,
+                    slidesPerView: 3,
+                    loop: true,
+                    direction: 'horizontal',
+                    wrapperClass: listClass,
+                    slideClass: itemClass,
+                    navigation: {
+                        nextEl: nextArrow,
+                        prevEl: prevArrow,
+                    },
+                    // Breakpoints for responsive design, which control how many slides are visible based on viewport width
+                    breakpoints: {
+                        320: {
+                            slidesPerView: 1,
+                        },
+                        767: {
+                            slidesPerView: 2,
+                        },
+                        980: {
+                            slidesPerView: 3,
+                        },
+                    },
+                });
+            }
+        });
+    }
 
-                // Display stars representing the reviewer's rating
-                const starsDiv = document.querySelectorAll('[data-div="stars"]')[x];
-                const starIcons = [...starsDiv.children];
-                starIcons.slice(review.rating).forEach((star) => starsDiv.removeChild(star));
-            });
+    function placeDetails(res) {
+        let reviews = res.reviews;
+        let openingObj = res.opening_hours;
+        console.log(res);
+        // Place Address
+        const addressText = document.querySelector('[data-text="address"]');
+        const openText = document.querySelector('[data-text="opening"]');
+        const websiteBtn = document.querySelector('[data-button="website"]');
+        const directionBtn = document.querySelector('[data-button="direction"]');
+        const openingHour = document.querySelectorAll('[data-text="day"]');
 
-            if (countedReviews > 3) {
-                // Execute the callback once all reviews are processed
-                callback();
+        addressText.textContent = res.formatted_address;
+        websiteBtn.setAttribute("href", res.website);
+        directionBtn.setAttribute("href", res.url);
+        if (openText) {
+            if (openingObj.isOpen()) {
+                openText.textContent = "open now";
+            } else {
+                openText.textContent = "close now";
             }
         }
-        // Display the main content after loading and processing the reviews
-        hide(document.querySelector('[data-lottie="loading"]'));
-        fadeIn(document.querySelector('[data-div="main"]'));
-    });
+
+        // Place opening details
+        for (let i = 0; i < openingObj.weekday_text.length; i++) {
+            if (openingHour[i]) {
+                openingHour[i].textContent = openingObj.weekday_text[i];
+
+            }
+        }
+
+        // place total rating
+        const ratingDiv = document.querySelector('[data-div="rating"]');
+        if (ratingDiv) {
+            const children = ratingDiv.children;
+
+            for (let i = 0; i < 5 - res.rating; i++) {
+                if (children[i]) {
+                    ratingDiv.removeChild(children[i]);
+                } else {
+                    // No more children to remove
+                    break;
+                }
+            }
+        }
+
+        if (reviews.length > 0) {
+            // Append review div based on revies total length
+            appendReview(reviews.length);
+
+            for (let x = 0; x < reviews.length; x++) {
+                // Reviewer name
+                const nameElements = document.querySelectorAll('[data-text="name"]');
+                nameElements[x].textContent = reviews[x]["author_name"];
+
+                // Review time description
+                const dateElements = document.querySelectorAll('[data-text="date"]');
+                dateElements[x].textContent = reviews[x]["relative_time_description"];
+
+                // Reviewe text
+                const reviewElements = document.querySelectorAll('[data-text="review"]');
+                reviewElements[x].textContent = reviews[x]["text"];
+
+                // Reviewer image
+                const imageElements = document.querySelectorAll('[data-div="image"]');
+                imageElements[x].setAttribute("src", reviews[x]["profile_photo_url"]);
+                imageElements[x].setAttribute("srcset", reviews[x]["profile_photo_url"]);
+
+                // Reviewer rating
+                const starsDiv = document.querySelectorAll('[data-div="stars"]')[x];
+                if (starsDiv) {
+                    const children = starsDiv.children;
+
+                    for (let i = 0; i < 5 - reviews[x].rating; i++) {
+                        if (children[i]) {
+                            starsDiv.removeChild(children[i]);
+                        } else {
+                            // No more children to remove
+                            break;
+                        }
+                    }
+                }
+            }
+
+            hide(document.querySelector('[data-lottie="loading"]'));
+            fadeIn(document.querySelector('[data-div="main"]'));
+        }
+    }
 }
