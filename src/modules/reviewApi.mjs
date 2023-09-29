@@ -138,38 +138,6 @@ export function initGoogleReviews(callback) {
     //     fadeIn(document.querySelector('[data-div="main"]'));
     // });
 
-
-    function appendReview(idx) {
-        for (x = 0; x < idx - 1; x++) {
-            // Get the first element with attribute data-div="review"
-            const reviewDiv = document.querySelector('[data-div="review"]:first-child');
-            // Clone the source element
-            const clonedElement = reviewDiv.cloneNode(true);
-            // Get the parent element with attribute data-div="review-wrapper"
-            const reviewWrapper = document.querySelector('[data-div="review-wrapper"]');
-            // Append the cloned element to the target wrapper
-            reviewWrapper.appendChild(clonedElement);
-        }
-    }
-
-    //custom UI
-    function fadeIn(element) {
-        element.style.opacity = 0;
-        element.style.display = "block";
-        const fadeInInterval = setInterval(function() {
-            if (element.style.opacity < 1) {
-                element.style.opacity = Number(element.style.opacity) + 0.1;
-            } else {
-                clearInterval(fadeInInterval);
-            }
-        }, 50); // Adjust the time interval (ms) for a smoother fade-in effect
-    }
-
-    function hide(element) {
-        element.style.display = "none";
-    }
-    // end of custom UI
-
     function placeDetails(res) {
         let reviews = res.reviews;
         let openingObj = res.opening_hours;
