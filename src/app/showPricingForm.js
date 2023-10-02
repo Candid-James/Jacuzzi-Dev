@@ -7,6 +7,7 @@ import {
 } from 'src/modules/showPricingFunctions.mjs';
 
 window.addEventListener('DOMContentLoaded', () => {
+  console.log('working');
   // Get all forms that have the 'j-element' attribute set to 'reveal-pricing'.
   const form = document.querySelectorAll('[j-element="reveal-pricing"]');
 
@@ -26,7 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Close the modal and clear its content.
   function modalClose() {
-    modalWrapper.classList.remove('is-open');
+    modal.classList.remove('is-open');
     setTimeout(() => {
       contentContainer.firstChild.remove();
     }, 150);
