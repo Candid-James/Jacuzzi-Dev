@@ -33,7 +33,7 @@ function fetchAndAppendElement() {
               'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.43/dist/showPricingForm.js'
             );
             $.getScript(
-              'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.43/dist/showPricingForm.js'
+              'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.43/dist/showPricing.js'
             );
             const allButton = document.querySelector("[hot-tub='all-tubs']");
             const rangeItems = document.querySelector("[hot-tub='inner']");
