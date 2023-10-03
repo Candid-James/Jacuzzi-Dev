@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.45
+
+### Patch Changes
+
+- 11b919a: setup product detail
+
 ## 1.2.44
 
 ### Patch Changes
