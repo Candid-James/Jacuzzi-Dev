@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.43
+
+### Patch Changes
+
+- 4f2b413: Fixed bug from previous pull
+
 ## 1.2.42
 
 ### Patch Changes
