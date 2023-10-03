@@ -1,4 +1,5 @@
 import { getCookieValue } from 'src/modules/showPricingFunctions.mjs';
+import { getCookieValue } from 'src/modules/showPricingFunctions.mjs';
 import { styleGridItems } from 'src/modules/styleGrid.js';
 
 if (getCookieValue('show-pricing')) {
