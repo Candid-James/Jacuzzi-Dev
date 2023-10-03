@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.42
+
+### Patch Changes
+
+- 912ede5: 404 improvements
+
 ## 1.2.41
 
 ### Patch Changes
