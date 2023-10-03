@@ -29,12 +29,12 @@ function fetchAndAppendElement() {
             appendItem.appendChild(clonedElement);
             // Call the fetchAndAppendElement function when the page has finished loading
             featureItemSlider();
-            console.log('scripts loading');
             $.getScript(
-              'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.41/dist/showPricingForm.js'
+              'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.43/dist/showPricingForm.js'
             );
-            console.log('scripts loading');
-            $.getScript('http://localhost:3000/showPricing.js');
+            $.getScript(
+              'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.43/dist/showPricingForm.js'
+            );
             const allButton = document.querySelector("[hot-tub='all-tubs']");
             const rangeItems = document.querySelector("[hot-tub='inner']");
 
