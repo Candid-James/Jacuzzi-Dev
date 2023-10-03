@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.40
+
+### Patch Changes
+
+- 7898db8: Fixed article popout and reveal pricing clash
+
 ## 1.2.39
 
 ### Patch Changes
