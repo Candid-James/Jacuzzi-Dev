@@ -1,3 +1,4 @@
+import { featuredArticleSlider } from 'src/modules/featuredArticleSlider.mjs';
 import { createHotTubOptionSlider } from 'src/modules/hotTubOptionSlider.mjs';
 
 // Check if the DOM is already loaded
@@ -8,5 +9,5 @@ if (document.readyState === 'loading') {
   });
 } else {
   // DOM is already loaded, execute the script immediately
-  createHotTubOptionSlider();
+  featuredArticleSlider();
 }

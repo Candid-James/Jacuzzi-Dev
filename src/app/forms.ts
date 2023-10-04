@@ -65,5 +65,6 @@ button?.addEventListener('click', function (e: MouseEvent) {
       console.error(error);
     });
 
+  // eslint-disable-next-line no-console
   console.log(formData);
 });
