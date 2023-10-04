@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.51
+
+### Patch Changes
+
+- e0334b9: fixed broken link
+
 ## 1.2.50
 
 ### Patch Changes
