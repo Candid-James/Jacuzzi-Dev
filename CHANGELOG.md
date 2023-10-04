@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.49
+
+### Patch Changes
+
+- 1876467: Created different sliders for featured article popout and main page
+
 ## 1.2.48
 
 ### Patch Changes
