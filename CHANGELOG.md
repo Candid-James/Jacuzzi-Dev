@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.47
+
+### Patch Changes
+
+- 2f81023: I'm useless
+
 ## 1.2.46
 
 ### Patch Changes
