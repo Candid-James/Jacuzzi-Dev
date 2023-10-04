@@ -119,9 +119,9 @@ export function setPopOutArticles() {
   }
 
   function loadNewScripts() {
-    const newScript = document.querySelector("[data-script='ajax-script']");
-    const scriptURL = newScript.getAttribute('src');
-    $.getScript(scriptURL);
+    $.getScript(
+      'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.50/dist/featureArticleSlider.js'
+    );
   }
 
   // Close the modal and clear its content.
