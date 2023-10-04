@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.50
+
+### Patch Changes
+
+- 17fd030: More popout adjustments
+
 ## 1.2.49
 
 ### Patch Changes
