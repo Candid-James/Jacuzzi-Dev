@@ -4,7 +4,6 @@
  * and subsequently displayed within a modal.
  */
 export function setPopOutArticles() {
-  console.log('article code is running');
   // Define the container where the fetched article content will be displayed.
   const contentContainer = document.querySelector('.simple-article-content-main');
 

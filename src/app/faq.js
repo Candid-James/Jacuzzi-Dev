@@ -8,10 +8,8 @@ window.addEventListener('DOMContentLoaded', () => {
     faqLinks[i].addEventListener('click', (e) => {
       const elementTarget = e.currentTarget;
       if (elementTarget.classList.contains('is-open')) {
-        console.log('yes');
         elementTarget.classList.add('is-open');
       } else {
-        console.log('no');
         elementTarget.classList.remove('is-open');
       }
     });

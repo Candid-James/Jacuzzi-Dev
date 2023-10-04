@@ -10,7 +10,6 @@ import { Navigation } from 'swiper/modules';
  * initialize them with the Swiper library, and set up the associated navigation arrows.
  */
 export function createHotTubOptionSlider() {
-  console.log('running hot tub slider');
   // Define an identifier for our slider. This will be used to find all elements associated with our slider.
   const identifier = 'options';
 
@@ -19,7 +18,6 @@ export function createHotTubOptionSlider() {
 
   // Loop through each found slider component to set it up.
   sliders.forEach((e) => {
-    console.log('slider element', e);
     // Find the main wrapper, list, items, and navigation elements inside the current slider.
     const wrapper = e.querySelector(`[${identifier}-element='wrapper']`);
     if (!wrapper) {
@@ -57,7 +55,6 @@ export function createHotTubOptionSlider() {
     const itemClass = getFirstWord(item[0]);
 
     if (item.length < 3) {
-      console.log('removing nav');
       nav.remove();
       return;
     }
