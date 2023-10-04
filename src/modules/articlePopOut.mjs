@@ -120,7 +120,7 @@ export function setPopOutArticles() {
 
   function loadNewScripts() {
     $.getScript(
-      'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.50/dist/featureArticleSlider.js'
+      'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.50/dist/featuredArticleSlider.js'
     );
   }
 
