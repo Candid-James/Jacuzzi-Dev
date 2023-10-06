@@ -1,8 +1,7 @@
 /**
  * Initializes and displays Google reviews.
  *
- * This function fetches Google place details such as reviews and displays them on the UI.
- * It also provides functionalities to duplicate review templates, fade in elements, and hide elements.
+ * This function fetches Google reviews using a custom endpoint and displays them on the UI.
  *
  * @param {Function} callback - A callback function to be invoked once reviews have been processed and displayed.
  */
@@ -13,6 +12,7 @@ export function initGoogleReviews(callback) {
    *
    * @param {Number} index - The number of times the first review div should be duplicated.
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function appendReviews(index) {
     // Repeatedly clone the first review div to match the required count
     for (let i = 0; i < index - 1; i++) {
@@ -138,8 +138,9 @@ export function initGoogleReviews(callback) {
   //     fadeIn(document.querySelector('[data-div="main"]'));
   // });
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   function placeDetails(res) {
-    let {reviews} = res;
+    let { reviews } = res;
     let openingObj = res.opening_hours;
     console.log(res);
     // Place Address
@@ -170,7 +171,7 @@ export function initGoogleReviews(callback) {
     // place total rating
     const ratingDiv = document.querySelector('[data-div="rating"]');
     if (ratingDiv) {
-      const {children} = ratingDiv;
+      const { children } = ratingDiv;
 
       for (let i = 0; i < 5 - res.rating; i++) {
         if (children[i]) {
@@ -207,7 +208,7 @@ export function initGoogleReviews(callback) {
         // Reviewer rating
         const starsDiv = document.querySelectorAll('[data-div="stars"]')[x];
         if (starsDiv) {
-          const {children} = starsDiv;
+          const { children } = starsDiv;
 
           for (let i = 0; i < 5 - reviews[x].rating; i++) {
             if (children[i]) {

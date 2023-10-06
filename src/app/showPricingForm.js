@@ -7,17 +7,15 @@ import {
 } from 'src/modules/showPricingFunctions.mjs';
 
 window.addEventListener('DOMContentLoaded', () => {
-  console.log('working');
   // Get all forms that have the 'j-element' attribute set to 'reveal-pricing'.
   const form = document.querySelectorAll('[j-element="reveal-pricing"]');
 
   // Get all elements that have the 'j-element' attribute set to 'show-pricing-true'.
   const pricingTrueTag = document.querySelectorAll('[j-element="show-pricing-true"]');
 
-  contactZipCodeValidation(
-    document.querySelector('#reveal-submit'),
-    document.querySelector('#Reveal-Pricing-Zip')
-  );
+  const submitButton = document.querySelector('#reveal-submit');
+
+  contactZipCodeValidation(submitButton, document.querySelector('#Reveal-Pricing-Zip'));
 
   // Get all buttons that have the 'j-element' attribute set to 'pricing-trigger'.
   const triggerButtons = document.querySelectorAll('[j-element="pricing-trigger"]');

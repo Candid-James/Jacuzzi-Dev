@@ -6,7 +6,8 @@
  * @param {HTMLInputElement} zipCodeInput - The input element for zip code.
  */
 export function contactZipCodeValidation(submitButton, zipCodeInput) {
-  submitButton.addEventListener('click', function (event) {
+  console.log('adding event listener');
+  submitButton.addEventListener('click', (event) => {
     console.log('submit clicked');
     var countryCode = document.querySelector("[j-element='country-code']").value;
     var zipCode = zipCodeInput.value.trim();
@@ -44,16 +45,16 @@ export function contactZipCodeValidation(submitButton, zipCodeInput) {
       return;
     }
   });
+}
 
-  function isValidUSZip(zip) {
-    var zipRegex = /^[0-9]{5}$/;
+function isValidUSZip(zip) {
+  var zipRegex = /^[0-9]{5}$/;
 
-    return zipRegex.test(zip);
-  }
+  return zipRegex.test(zip);
+}
 
-  function isValidCAZip(zip) {
-    var zipRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
+function isValidCAZip(zip) {
+  var zipRegex = /^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/;
 
-    return zipRegex.test(zip);
-  }
+  return zipRegex.test(zip);
 }
