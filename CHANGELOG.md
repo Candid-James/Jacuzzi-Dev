@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.53
+
+### Patch Changes
+
+- 2b900bc: more changes
+- 2b900bc: Adjusted contact form code
+
 ## 1.2.52
 
 ### Patch Changes
