@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.52
+
+### Patch Changes
+
+- 3b26b3a: More fixes to article popout
+- 3b26b3a: Fixed duplicate event listeners bug
+
 ## 1.2.51
 
 ### Patch Changes
