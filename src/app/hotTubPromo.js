@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   const submitButton = document.getElementById('submitButton');
-  const zipCode = document.getElementById('Hot-Tub-Promotion-Zip-Code');
+  const zipCode = document.getElementById('zip');
 
   contactZipCodeValidation(submitButton, zipCode);
 });
