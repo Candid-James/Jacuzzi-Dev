@@ -5,7 +5,6 @@ import { swapPriceButtons } from 'src/modules/showPricingFunctions.mjs';
 import { styleGridItems } from 'src/modules/styleGrid.js';
 
 function initializeScript() {
-  console.log('running');
   styleGridItems();
   createHotTubOptionSlider();
   setPopOutArticles();
