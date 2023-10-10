@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.54
+
+### Patch Changes
+
+- f41a7ef: Improved sliders
+- cee48d8: improved options slider
+
 ## 1.2.53
 
 ### Patch Changes
