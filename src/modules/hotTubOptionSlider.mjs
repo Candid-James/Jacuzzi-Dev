@@ -54,13 +54,16 @@ export function createHotTubOptionSlider() {
     const listClass = getFirstWord(list);
     const itemClass = getFirstWord(item[0]);
 
-    if (item.length < 3) {
+    if (item.length < 3 && window.innerWidth > 767) {
       nav.remove();
       return;
     }
 
     // Ensure there are more than 2 items and a wrapper present before proceeding.
-    if (item.length > 2 && wrapper) {
+    if (
+      (item.length > 2 && wrapper && window.innerWidth > 767) ||
+      (item.length > 0 && wrapper && window.innerWidth < 768)
+    ) {
       // Clone each item in the slider. This can be useful for sliders that need to loop seamlessly.
       for (let i = 0; i < item.length; i++) {
         const clonedItem = item[i].cloneNode(true);

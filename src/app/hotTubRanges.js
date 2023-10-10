@@ -1,15 +1,16 @@
 import { setPopOutArticles } from 'src/modules/articlePopOut.mjs';
-// import { createFullHeightSlider } from 'src/modules/fullHeightSlider.mjs';
+import { createFullHeightSlider } from 'src/modules/fullHeightSlider.mjs';
 import { createHotTubOptionSlider } from 'src/modules/hotTubOptionSlider.mjs';
 import { swapPriceButtons } from 'src/modules/showPricingFunctions.mjs';
 import { styleGridItems } from 'src/modules/styleGrid.js';
 
 function initializeScript() {
+  console.log('running');
   styleGridItems();
   createHotTubOptionSlider();
   setPopOutArticles();
   swapPriceButtons();
-  // createFullHeightSlider();
+  createFullHeightSlider();
 }
 
 // Check if the DOM is already loaded
