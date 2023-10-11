@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.55
+
+### Patch Changes
+
+- bc052eb: Improved featured item slider looping
+
 ## 1.2.54
 
 ### Patch Changes
