@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // If the AJAX request corresponds to the form with 'j-element' set to 'reveal-pricing'
     // and the request was successful, perform the following:
-    if (settings['j-element'] === 'reveal-pricing' && isSuccessful) {
+    if (settings['j-pricing'] === 'reveal-pricing' && isSuccessful) {
       // Update the 'show-pricing' cookie's value to 'true'.
       updateCookie('show-pricing', true);
 
