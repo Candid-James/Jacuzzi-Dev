@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.59
+
+### Patch Changes
+
+- 4755d13: More forms
+
 ## 1.2.58
 
 ### Patch Changes
