@@ -8,7 +8,7 @@ import {
 
 window.addEventListener('DOMContentLoaded', () => {
   // Get all forms that have the 'j-element' attribute set to 'reveal-pricing'.
-  const form = document.querySelectorAll('[j-element="reveal-pricing"]');
+  const form = document.querySelectorAll('[j-pricing="reveal-pricing"]');
 
   // Get all elements that have the 'j-element' attribute set to 'show-pricing-true'.
   const pricingTrueTag = document.querySelectorAll('[j-element="show-pricing-true"]');
