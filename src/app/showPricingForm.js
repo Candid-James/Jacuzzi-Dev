@@ -66,7 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
   form.forEach((el) => {
     el.addEventListener('submit', () => {
       $.ajax({
-        'j-element': 'reveal-pricing',
+        'j-pricing': 'reveal-pricing',
       });
     });
   });
