@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.57
+
+### Patch Changes
+
+- 489e003: Adjusted form pricing
+
 ## 1.2.56
 
 ### Patch Changes
