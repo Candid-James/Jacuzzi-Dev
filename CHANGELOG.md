@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.56
+
+### Patch Changes
+
+- 71586f4: Improved forms code
+
 ## 1.2.55
 
 ### Patch Changes
