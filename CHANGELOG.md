@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.58
+
+### Patch Changes
+
+- ead055a: More form adjustments
+- ead055a: More form adjustments
+
 ## 1.2.57
 
 ### Patch Changes
