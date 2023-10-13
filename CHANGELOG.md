@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.60
+
+### Patch Changes
+
+- ddf5fcc: Improved article popout
+
 ## 1.2.59
 
 ### Patch Changes
