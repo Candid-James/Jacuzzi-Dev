@@ -9,8 +9,9 @@ function handleSuccessfulSubmission(formContainer) {
   if (form) {
     form.addEventListener('submit', () => {
       successState.classList.add('is-submitted');
+      const parentWrapper = form.parentNode;
       form.classList.add('hide');
-      formContainer.classList.add('hide');
+      parentWrapper.classList.add('hide');
     });
   }
 }
@@ -19,7 +20,7 @@ function mirrorFormSubmit(formContainer) {
   const salesforceForm = formContainer.querySelector('form[j-element="salesforce-form"]');
   const webflowForm = formContainer.querySelector('form[j-element="webflow-form"]');
 
-  if (!salesforceForm || !webflowForm) return;
+  if (!salesforceForm || !webflowForm) return console.error('missing forms');
 
   const salesforceInputs = salesforceForm.querySelectorAll('input');
   const webflowInputs = webflowForm.querySelectorAll('input');
