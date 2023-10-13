@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.62
+
+### Patch Changes
+
+- 1f47e7d: reveal pricing form fiz
+
 ## 1.2.61
 
 ### Patch Changes
