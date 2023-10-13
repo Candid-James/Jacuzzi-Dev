@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.61
+
+### Patch Changes
+
+- 03ad0d1: Removed console logs
+- 03ad0d1: Fixed form bug
+
 ## 1.2.60
 
 ### Patch Changes
