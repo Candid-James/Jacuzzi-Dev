@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const submitButton = document.querySelector('#reveal-submit');
 
-  contactZipCodeValidation(submitButton, document.querySelector('#zip'));
+  contactZipCodeValidation(submitButton, document.querySelector("[j-element='pricing-zip']"));
 
   // Get all buttons that have the 'j-element' attribute set to 'pricing-trigger'.
   const triggerButtons = document.querySelectorAll('[j-element="pricing-trigger"]');

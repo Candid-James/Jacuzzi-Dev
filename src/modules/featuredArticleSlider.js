@@ -2,6 +2,7 @@
 import { getFirstWord } from 'src/modules/getClassName.mjs';
 import { Swiper } from 'swiper';
 import { Navigation } from 'swiper/modules';
+
 export function createFeaturedArticleSlider() {
   // Define an identifier for our slider. This will be used to find all elements associated with our slider.
   const identifier = 'article';
