@@ -1,3 +1,5 @@
+import { createFeaturedArticleSlider } from 'src/modules/featuredArticleSlider.js';
+
 /**
  * Handles the dynamic fetching and display of "pop-out" articles in a modal.
  * When a specific button is hovered over or clicked, the article content is fetched
@@ -88,8 +90,7 @@ export function setPopOutArticles() {
           // Display the fetched article in the modal.
           modalWrapper.classList.add('is-open');
           contentContainer.appendChild(data);
-          loadNewScripts();
-          // canRun = false;
+          createFeaturedArticleSlider();
           return;
         });
     } catch (error) {
@@ -103,7 +104,7 @@ export function setPopOutArticles() {
   function updatePageWithNewData(data) {
     modalWrapper.classList.add('is-open');
     contentContainer.appendChild(data);
-    loadNewScripts();
+    createFeaturedArticleSlider();
   }
 
   // Handle the potential closing of the modal.
@@ -111,12 +112,6 @@ export function setPopOutArticles() {
     if (e.target === modalWrapper) {
       modalClose(contentContainer);
     }
-  }
-
-  function loadNewScripts() {
-    $.getScript(
-      'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.50/dist/featuredArticleSlider.js'
-    );
   }
 
   // Close the modal and clear its content.
