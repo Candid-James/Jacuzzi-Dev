@@ -60,14 +60,14 @@ function redirectAttribute(formContainer) {
   const salesforceForm = formContainer.querySelector('form[j-element="salesforce-form"]');
 
   if (salesforceForm.getAttribute('redirect') === 'true') {
-    const timeout = salesforceForm.getAttribute('timeout') || 800
-    salesforceForm.addEventListener('submit', ()=>{
-      setTimeout(()=>{
+    const timeout = salesforceForm.getAttribute('timeout') || 750;
+    salesforceForm.addEventListener('submit', () => {
+      setTimeout(() => {
         // Redirect to a relative URL path
-          window.location.href = '/thank-you';
-      }, timeout)
-    })
-  }  
+        window.location.href = '/thank-you';
+      }, timeout);
+    });
+  }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -76,7 +76,7 @@ window.addEventListener('DOMContentLoaded', () => {
     formContainers.forEach((container) => {
       handleSuccessfulSubmission(container);
       mirrorFormSubmit(container);
-      redirectAttribute(container)
+      redirectAttribute(container);
     });
   }, 500);
 });
