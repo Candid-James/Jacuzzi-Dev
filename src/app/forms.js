@@ -1,3 +1,14 @@
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const formContainers = document.querySelectorAll('[j-element="form-container"]');
+    formContainers.forEach((container) => {
+      handleSuccessfulSubmission(container);
+      mirrorFormSubmit(container);
+      redirectAttribute(container);
+    });
+  }, 500);
+});
+
 function handleSuccessfulSubmission(formContainer) {
   const successState = formContainer.querySelector('.success-message');
   const form = formContainer.querySelector('[j-element="salesforce-form"]');
@@ -19,46 +30,25 @@ function handleSuccessfulSubmission(formContainer) {
 function mirrorFormSubmit(formContainer) {
   const salesforceForm = formContainer.querySelector('form[j-element="salesforce-form"]');
   const webflowForm = formContainer.querySelector('form[j-element="webflow-form"]');
-  const submitButton = salesforceForm.querySelector('#submitButton');
-
-  console.log(submitButton);
 
   if (!salesforceForm || !webflowForm) return console.error('missing forms');
 
-  const salesforceInputs = salesforceForm.querySelectorAll('input');
-  const webflowInputs = webflowForm.querySelectorAll('input');
+  const submitButton =
+    salesforceForm.querySelector('input[type="submit"]') ||
+    salesforceForm.querySelector('button[type="submit"]');
 
-  submitButton.addEventListener('mouseenter', mirrorFormData);
+  if (!submitButton) return console.error('no submit button');
 
-  function mirrorFormData() {
-    salesforceInputs.forEach((input, index) => {
-      webflowInputs[index].value = input.value;
-    });
-  }
+  console.log({ salesforceForm, webflowForm, submitButton });
+
+  const salesforceInputs = salesforceForm.querySelectorAll('input, select');
+  const webflowInputs = webflowForm.querySelectorAll('input, select');
 
   salesforceInputs.forEach((input, index) => {
     input.addEventListener('change', () => {
+      console.log(input.value);
       webflowInputs[index].value = input.value;
-    });
-  });
-
-  const countryDropdowns = salesforceForm.querySelectorAll('[fs-selectcustom-element="dropdown"]');
-  const webflowCountryDropdowns = webflowForm.querySelectorAll(
-    '[fs-selectcustom-element="dropdown"]'
-  );
-
-  countryDropdowns.forEach((dropdown, dropdownIndex) => {
-    const dropdownLinks = dropdown.querySelectorAll('.select_link');
-    dropdownLinks.forEach((link, linkIndex) => {
-      link.addEventListener('click', () => {
-        if (webflowCountryDropdowns[dropdownIndex]) {
-          const webflowLinks =
-            webflowCountryDropdowns[dropdownIndex].querySelectorAll('.select_link');
-          if (webflowLinks[linkIndex]) {
-            webflowLinks[linkIndex].click();
-          }
-        }
-      });
+      console.log(webflowInputs[index].value);
     });
   });
 
@@ -80,14 +70,3 @@ function redirectAttribute(formContainer) {
     });
   }
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => {
-    const formContainers = document.querySelectorAll('[j-element="form-container"]');
-    formContainers.forEach((container) => {
-      handleSuccessfulSubmission(container);
-      mirrorFormSubmit(container);
-      redirectAttribute(container);
-    });
-  }, 500);
-});

@@ -1,5 +1,4 @@
 // Importing required functions from the 'showPricingFunctions.mjs' module.
-import { contactZipCodeValidation } from 'src/modules/contactFormat.mjs';
 import {
   showPricingTrueTag,
   swapPriceButtons,
@@ -12,10 +11,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Get all elements that have the 'j-element' attribute set to 'show-pricing-true'.
   const pricingTrueTag = document.querySelectorAll('[j-element="show-pricing-true"]');
-
-  const submitButton = document.querySelector('#reveal-submit');
-
-  contactZipCodeValidation(submitButton, document.querySelector("[j-element='pricing-zip']"));
 
   // Get all buttons that have the 'j-element' attribute set to 'pricing-trigger'.
   const triggerButtons = document.querySelectorAll('[j-element="pricing-trigger"]');

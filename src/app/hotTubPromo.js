@@ -1,5 +1,3 @@
-import { contactZipCodeValidation } from 'src/modules/contactFormat.mjs';
-
 window.addEventListener('DOMContentLoaded', () => {
   const showButton = document.getElementById('show-contact-form');
 
@@ -7,9 +5,4 @@ window.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.section_contact');
     form.classList.remove('is-closed');
   });
-
-  const submitButton = document.getElementById('submitButton');
-  const zipCode = document.getElementById('zip');
-
-  contactZipCodeValidation(submitButton, zipCode);
 });
