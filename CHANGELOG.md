@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.63
+
+### Patch Changes
+
+- 06b1c27: Added form redirect script
+
 ## 1.2.62
 
 ### Patch Changes
