@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.64
+
+### Patch Changes
+
+- c9ceb73: Added timeout attribute
+
 ## 1.2.63
 
 ### Patch Changes
