@@ -1,5 +1,12 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.67
+
+### Patch Changes
+
+- 16ae5cd: form overhaul
+- a410443: More form security
+
 ## 1.2.66
 
 ### Patch Changes
