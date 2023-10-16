@@ -60,11 +60,12 @@ function redirectAttribute(formContainer) {
   const salesforceForm = formContainer.querySelector('form[j-element="salesforce-form"]');
 
   if (salesforceForm.getAttribute('redirect') === 'true') {
+    const timeout = salesforceForm.getAttribute('timeout') || 800
     salesforceForm.addEventListener('submit', ()=>{
       setTimeout(()=>{
         // Redirect to a relative URL path
           window.location.href = '/thank-you';
-      }, 500)
+      }, timeout)
     })
   }  
 }
