@@ -56,12 +56,26 @@ function mirrorFormSubmit(formContainer) {
   });
 }
 
+function redirectAttribute(formContainer) {
+  const salesforceForm = formContainer.querySelector('form[j-element="salesforce-form"]');
+
+  if (salesforceForm.getAttribute('redirect') === 'true') {
+    salesforceForm.addEventListener('submit', ()=>{
+      setTimeout(()=>{
+        // Redirect to a relative URL path
+          window.location.href = '/thank-you';
+      }, 500)
+    })
+  }  
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     const formContainers = document.querySelectorAll('[j-element="form-container"]');
     formContainers.forEach((container) => {
       handleSuccessfulSubmission(container);
       mirrorFormSubmit(container);
+      redirectAttribute(container)
     });
   }, 500);
 });
