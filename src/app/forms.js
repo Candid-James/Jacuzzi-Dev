@@ -19,11 +19,22 @@ function handleSuccessfulSubmission(formContainer) {
 function mirrorFormSubmit(formContainer) {
   const salesforceForm = formContainer.querySelector('form[j-element="salesforce-form"]');
   const webflowForm = formContainer.querySelector('form[j-element="webflow-form"]');
+  const submitButton = salesforceForm.querySelector('#submitButton');
+
+  console.log(submitButton);
 
   if (!salesforceForm || !webflowForm) return console.error('missing forms');
 
   const salesforceInputs = salesforceForm.querySelectorAll('input');
   const webflowInputs = webflowForm.querySelectorAll('input');
+
+  submitButton.addEventListener('mouseenter', mirrorFormData);
+
+  function mirrorFormData() {
+    salesforceInputs.forEach((input, index) => {
+      webflowInputs[index].value = input.value;
+    });
+  }
 
   salesforceInputs.forEach((input, index) => {
     input.addEventListener('change', () => {
