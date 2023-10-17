@@ -167,6 +167,27 @@ function navInit() {
   openSide.addEventListener('click', openSideMenu);
 
   hotTubsMobile.addEventListener('click', handleHotTubsMobile);
+
+  const allButton = document.querySelector("[hot-tub='all-tubs']");
+  const rangeItems = document.querySelector("[hot-tub='inner']");
+
+  rangeItems.append(allButton);
+
+  // Get the menu heading wrapper element
+  const menuHeadingWrapper = document.querySelector('.nav_menu-heading-wrapper');
+
+  // Get the height of the menu heading wrapper
+  const menuHeadingWrapperHeight = menuHeadingWrapper.offsetHeight;
+
+  // Calculate the height for the menu layer
+  const menuLayerHeight = `calc(100vh - ${menuHeadingWrapperHeight}px)`;
+
+  // Set the height of the menu layer
+  const menuLayer = document.querySelectorAll('.nav_menu-layer');
+
+  menuLayer.forEach((e) => {
+    e.style.maxHeight = menuLayerHeight;
+  });
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -176,21 +197,6 @@ window.addEventListener('DOMContentLoaded', () => {
     if (navElement) {
       navInit();
       document.addEventListener('click', (e) => {
-        // Get the menu heading wrapper element
-        const menuHeadingWrapper = document.querySelector('.nav_menu-heading-wrapper');
-
-        // Get the height of the menu heading wrapper
-        const menuHeadingWrapperHeight = menuHeadingWrapper.offsetHeight;
-
-        // Calculate the height for the menu layer
-        const menuLayerHeight = `calc(100vh - ${menuHeadingWrapperHeight}px)`;
-
-        // Set the height of the menu layer
-        const menuLayer = document.querySelectorAll('.nav_menu-layer');
-
-        menuLayer.forEach((e) => {
-          e.style.maxHeight = menuLayerHeight;
-        });
         // Cache DOM elements
         const nav = document.querySelector('.nav');
         const menuWrapper = document.querySelector('.nav_menu-wrapper');
