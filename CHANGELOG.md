@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.68
+
+### Patch Changes
+
+- 08debb9: Added UTMs and Form validation
+
 ## 1.2.67
 
 ### Patch Changes
