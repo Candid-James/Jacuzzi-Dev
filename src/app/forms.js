@@ -5,6 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
       handleSuccessfulSubmission(container);
       mirrorFormSubmit(container);
       redirectAttribute(container);
+      errorStates(container);
     });
   }, 500);
 });
@@ -68,5 +69,32 @@ function redirectAttribute(formContainer) {
         window.location.href = '/thank-you';
       }, timeout);
     });
-  }
+  } else return;
+}
+
+function errorStates(formContainer) {
+  // Get the button element
+  const button = formContainer.querySelector('#submitButton');
+
+  // Add event listener to button click
+  button.addEventListener('click', () => {
+    // Get all select fields
+    const selectFields = formContainer.querySelectorAll('select');
+
+    // Loop through select fields
+    selectFields.forEach((select) => {
+      // Check if first option is selected
+      if (select.selectedIndex === 0) {
+        const parent = select.closest('.form-input.is-select-input.w-dropdown');
+
+        // Apply red outline to parent dropdown list element
+        parent.style.border = '1px solid #dc2217';
+      } else {
+        const parent = select.closest('.form-input.is-select-input.w-dropdown');
+
+        // Apply red outline to parent dropdown list element
+        parent.style.border = '1px solid rgba(2, 7, 13, 0.2)';
+      }
+    });
+  });
 }

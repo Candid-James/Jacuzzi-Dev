@@ -35,25 +35,23 @@ export function setPopOutArticles() {
     // If data is already prefetched for this URL, we skip the rest of the function to avoid redundant network calls.
     if (prefetchedData && prefetchedData.url === url) return;
 
-    setTimeout(() => {
-      try {
-        fetch(url)
-          .then((response) => {
-            if (!response.ok) {
-              throw new Error('HTTP error! status: ' + response.status);
-            }
-            return response.text();
-          })
-          .then((html) => {
-            const container = document.createElement('div');
-            container.innerHTML = html;
-            // Store the main content from the fetched HTML in the prefetchedData variable for later use.
-            prefetchedData = { content: container.querySelector('.main-wrapper'), url: url };
-          });
-      } catch (error) {
-        console.error('An error occurred while prefetching the article:', error);
-      }
-    }, 150);
+    try {
+      fetch(url)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('HTTP error! status: ' + response.status);
+          }
+          return response.text();
+        })
+        .then((html) => {
+          const container = document.createElement('div');
+          container.innerHTML = html;
+          // Store the main content from the fetched HTML in the prefetchedData variable for later use.
+          prefetchedData = { content: container.querySelector('.main-wrapper'), url: url };
+        });
+    } catch (error) {
+      console.error('An error occurred while prefetching the article:', error);
+    }
   }
 
   // Handles the button click to either use prefetched article content or fetch it if not available.
