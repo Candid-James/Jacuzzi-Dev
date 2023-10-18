@@ -1,3 +1,6 @@
+import { Swiper } from 'swiper';
+import { Navigation } from 'swiper/modules';
+
 window.addEventListener('DOMContentLoaded', () => {
   function appendReview(idx) {
     for (let x = 0; x < idx - 1; x++) {
@@ -211,6 +214,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const swiper = new Swiper('.swiper', {
       // Optional parameters
+      modules: [Navigation],
       loop: true,
       speed: 650,
       spaceBetween: 32,
