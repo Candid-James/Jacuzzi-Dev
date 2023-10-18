@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.70
+
+### Patch Changes
+
+- 4147863: Imported dealers script
+
 ## 1.2.69
 
 ### Patch Changes
