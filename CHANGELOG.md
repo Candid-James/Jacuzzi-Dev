@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.71
+
+### Patch Changes
+
+- 87a0540: Imported Swiper
+
 ## 1.2.70
 
 ### Patch Changes
