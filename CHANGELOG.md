@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.74
+
+### Patch Changes
+
+- 715f4f5: more safety on dealers page
+
 ## 1.2.73
 
 ### Patch Changes
