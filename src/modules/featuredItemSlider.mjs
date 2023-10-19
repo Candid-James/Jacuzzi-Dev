@@ -26,13 +26,19 @@ export function featureItemSlider() {
       const listClass = getFirstWord(list);
       const itemClass = getFirstWord(item);
 
+      // Clone each item in the slider. This can be useful for sliders that need to loop seamlessly.
+      for (let i = 0; i < item.length; i++) {
+        const clonedItem = item[i].cloneNode(true);
+        list.appendChild(clonedItem);
+      }
+
       // If a wrapper exists for the current slider, initialize the Swiper slider with the extracted classes and predefined settings.
       if (wrapper) {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const swiper = new Swiper(wrapper, {
           speed: 400, // Animation speed when sliding.
-          spaceBetween: 16, // Space between slides.
-          slidesPerView: 1.05, // Number of slides visible at the same time.
+          spaceBetween: 32, // Space between slides.
+          slidesPerView: 1, // Number of slides visible at the same time.
           loop: true, // Loop mode enabled.
           direction: 'horizontal', // Slides' change direction.
           wrapperClass: listClass, // Custom class for the wrapper.

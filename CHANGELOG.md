@@ -1,5 +1,205 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.71
+
+### Patch Changes
+
+- 87a0540: Imported Swiper
+
+## 1.2.70
+
+### Patch Changes
+
+- 4147863: Imported dealers script
+
+## 1.2.69
+
+### Patch Changes
+
+- 9317472: more nav changes
+- 804cb8c: Nav adjustment
+
+## 1.2.68
+
+### Patch Changes
+
+- 08debb9: Added UTMs and Form validation
+
+## 1.2.67
+
+### Patch Changes
+
+- 16ae5cd: form overhaul
+- a410443: More form security
+
+## 1.2.66
+
+### Patch Changes
+
+- f62f490: faq fix
+
+## 1.2.65
+
+### Patch Changes
+
+- 3121e63: Demo for Jim to see about Workflow
+
+## 1.2.64
+
+### Patch Changes
+
+- c9ceb73: Added timeout attribute
+
+## 1.2.63
+
+### Patch Changes
+
+- 06b1c27: Added form redirect script
+
+## 1.2.62
+
+### Patch Changes
+
+- 1f47e7d: reveal pricing form fiz
+
+## 1.2.61
+
+### Patch Changes
+
+- 03ad0d1: Removed console logs
+- 03ad0d1: Fixed form bug
+
+## 1.2.60
+
+### Patch Changes
+
+- ddf5fcc: Improved article popout
+
+## 1.2.59
+
+### Patch Changes
+
+- 4755d13: More forms
+
+## 1.2.58
+
+### Patch Changes
+
+- ead055a: More form adjustments
+- ead055a: More form adjustments
+
+## 1.2.57
+
+### Patch Changes
+
+- 489e003: Adjusted form pricing
+
+## 1.2.56
+
+### Patch Changes
+
+- 71586f4: Improved forms code
+
+## 1.2.55
+
+### Patch Changes
+
+- bc052eb: Improved featured item slider looping
+
+## 1.2.54
+
+### Patch Changes
+
+- f41a7ef: Improved sliders
+- cee48d8: improved options slider
+
+## 1.2.53
+
+### Patch Changes
+
+- 2b900bc: more changes
+- 2b900bc: Adjusted contact form code
+
+## 1.2.52
+
+### Patch Changes
+
+- 3b26b3a: More fixes to article popout
+- 3b26b3a: Fixed duplicate event listeners bug
+
+## 1.2.51
+
+### Patch Changes
+
+- e0334b9: fixed broken link
+
+## 1.2.50
+
+### Patch Changes
+
+- 17fd030: More popout adjustments
+
+## 1.2.49
+
+### Patch Changes
+
+- 1876467: Created different sliders for featured article popout and main page
+
+## 1.2.48
+
+### Patch Changes
+
+- 96693e0: hot tub range improved
+
+## 1.2.47
+
+### Patch Changes
+
+- 2f81023: I'm useless
+
+## 1.2.46
+
+### Patch Changes
+
+- d4c020a: General adjustments
+- f9ab689: general improvements
+
+## 1.2.45
+
+### Patch Changes
+
+- 11b919a: setup product detail
+
+## 1.2.44
+
+### Patch Changes
+
+- bfd9fdf: General fixes
+
+## 1.2.43
+
+### Patch Changes
+
+- 4f2b413: Fixed bug from previous pull
+
+## 1.2.42
+
+### Patch Changes
+
+- 912ede5: 404 improvements
+
+## 1.2.41
+
+### Patch Changes
+
+- 39610d2: 404 improvements
+
+## 1.2.40
+
+### Patch Changes
+
+- 7898db8: Fixed article popout and reveal pricing clash
+
 ## 1.2.39
 
 ### Patch Changes

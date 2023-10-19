@@ -7,7 +7,11 @@ window.addEventListener('DOMContentLoaded', () => {
   for (let i = 0; i < faqLinks.length; i++) {
     faqLinks[i].addEventListener('click', (e) => {
       const elementTarget = e.currentTarget;
-      elementTarget.classList.toggle('is-open');
+      if (elementTarget.classList.contains('is-open')) {
+        elementTarget.classList.remove('is-open');
+      } else {
+        elementTarget.classList.add('is-open');
+      }
     });
   }
 });

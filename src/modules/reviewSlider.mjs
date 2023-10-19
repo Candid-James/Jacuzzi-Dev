@@ -5,8 +5,14 @@ import { Navigation } from 'swiper/modules'; // Navigation module from Swiper fo
 
 /**
  * Initializes the review slider on the page.
- * This function scans for slider components on the page, sets up navigation for each one,
- * and duplicates slide items when more than two are detected.
+ * Required attributes:
+ * - reviews-element="slider-component"
+ * - reviews-element="wrapper"
+ * - reviews-element="list"
+ * - reviews-element="item"
+ * - reviews-element="navigation"
+ * - reviews-element="next-arrow"
+ * - reviews-element="prev-arrow"
  */
 export function initReviewSlider() {
   // Define the custom attribute identifier for slider components

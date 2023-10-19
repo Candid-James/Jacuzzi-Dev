@@ -1,8 +1,8 @@
 export function styleGridItems() {
-  const gridContainer = document.querySelector('#features-grid'); // Replace with the appropriate selector for your grid container
+  const gridContainer = document.querySelector('#features-grid');
   const { children } = gridContainer;
 
-  if (children.length === 5) {
+  if (children.length === 5 && window.innerWidth > 767) {
     // Apply styles for 5 elements
     children[0].style.cssText = `
               grid-column-start: span 4;
@@ -38,7 +38,7 @@ export function styleGridItems() {
               grid-row-start: span 1;
               grid-row-end: span 1;
           `;
-  } else if (children.length === 4) {
+  } else if (children.length === 4 && window.innerWidth > 767) {
     // Apply styles for the remaining 4 elements
     children[0].style.cssText = `
               grid-column-start: span 4;

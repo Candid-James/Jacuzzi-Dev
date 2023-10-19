@@ -97,106 +97,155 @@ window.addEventListener('DOMContentLoaded', () => {
 
     //using places data from google map
     function placeDetails(res) {
-        if (res.reviews.length > 0) {
-            let reviews = res.reviews.filter((review) => review.rating >= 3);
-            let openingObj = res.opening_hours;
-            console.log(res);
-            // Place Address
-            const addressText = document.querySelector('[data-text="address"]');
-            const openText = document.querySelector('[data-text="opening"]');
-            const websiteBtn = document.querySelector('[data-button="website"]');
-            const directionBtn = document.querySelector('[data-button="direction"]');
-            const openingHour = document.querySelectorAll('[data-text="day"]');
+        let reviews = res.reviews.filter((review) => review.rating >= 3);
+        let openingObj = res.opening_hours;
+        console.log(res);
+        // Place Address
+        const addressText = document.querySelector('[data-text="address"]');
+        const openText = document.querySelector('[data-text="opening"]');
+        const websiteBtn = document.querySelector('[data-button="website"]');
+        const directionBtn = document.querySelector('[data-button="direction"]');
+        const openingHour = document.querySelectorAll('[data-text="day"]');
 
-            addressText.textContent = res.formatted_address;
-            websiteBtn.setAttribute('href', res.website);
-            directionBtn.setAttribute('href', res.url);
-            if (openText) {
-                if (openingObj.isOpen()) {
-                    openText.textContent = 'open now';
+        addressText.textContent = res.formatted_address;
+        websiteBtn.setAttribute('href', res.website);
+        directionBtn.setAttribute('href', res.url);
+        if (openText) {
+            if (openingObj.isOpen()) {
+                openText.textContent = 'open now';
+            } else {
+                openText.textContent = 'close now';
+            }
+        }
+
+        // Place opening details
+        for (let i = 0; i < openingObj.weekday_text.length; i++) {
+            if (openingHour[i]) {
+                openingHour[i].textContent = openingObj.weekday_text[i];
+            }
+        }
+
+        // place total rating
+        const ratingDiv = document.querySelector('[data-div="rating"]');
+        if (ratingDiv) {
+            const { children } = ratingDiv;
+            console.log(children);
+            //hide(children)
+            for (let i = 0; i < 5 - res.rating; i++) {
+                if (children[i]) {
+                    ratingDiv.removeChild(children[i]);
                 } else {
-                    openText.textContent = 'close now';
+                    // No more children to remove
+                    break;
                 }
             }
+        }
 
-            // Place opening details
-            for (let i = 0; i < openingObj.weekday_text.length; i++) {
-                if (openingHour[i]) {
-                    openingHour[i].textContent = openingObj.weekday_text[i];
-                }
-            }
+        //using places data from google map
+        function placeDetails(res) {
+            if (res.reviews.length > 0) {
+                let reviews = res.reviews.filter((review) => review.rating >= 3);
+                let openingObj = res.opening_hours;
+                console.log(res);
+                // Place Address
+                const addressText = document.querySelector('[data-text="address"]');
+                const openText = document.querySelector('[data-text="opening"]');
+                const websiteBtn = document.querySelector('[data-button="website"]');
+                const directionBtn = document.querySelector('[data-button="direction"]');
+                const openingHour = document.querySelectorAll('[data-text="day"]');
 
-            // place total rating
-            const ratingDiv = document.querySelector('[data-div="rating"]');
-            if (ratingDiv) {
-                const { children } = ratingDiv;
-                console.log(children);
-                //hide(children)
-                for (let i = 0; i < 5 - res.rating; i++) {
-                    if (children[i]) {
-                        ratingDiv.removeChild(children[i]);
+                addressText.textContent = res.formatted_address;
+                websiteBtn.setAttribute('href', res.website);
+                directionBtn.setAttribute('href', res.url);
+                if (openText) {
+                    if (openingObj.isOpen()) {
+                        openText.textContent = 'open now';
                     } else {
-                        // No more children to remove
-                        break;
+                        openText.textContent = 'close now';
                     }
                 }
-            }
 
-            if (reviews.length > 0) {
-                // Append review div based on revies total length
-                appendReview(reviews.length);
-                console.log(reviews);
-                for (let x = 0; x < reviews.length; x++) {
-                    countedReviews = countedReviews + 1;
-                    // Reviewer name
-                    const nameElements = document.querySelectorAll('[data-text="name"]');
-                    nameElements[x].textContent = reviews[x]['author_name'];
+                // Place opening details
+                for (let i = 0; i < openingObj.weekday_text.length; i++) {
+                    if (openingHour[i]) {
+                        openingHour[i].textContent = openingObj.weekday_text[i];
+                    }
+                }
 
-                    // Review time description
-                    const dateElements = document.querySelectorAll('[data-text="date"]');
-                    dateElements[x].textContent = reviews[x]['relative_time_description'];
-
-                    // Reviewe text
-                    const reviewElements = document.querySelectorAll('[data-text="review"]');
-                    reviewElements[x].textContent = reviews[x]['text'];
-
-                    // Reviewer image
-                    const imageElements = document.querySelectorAll('[data-div="image"]');
-                    imageElements[x].setAttribute('src', reviews[x]['profile_photo_url']);
-                    imageElements[x].setAttribute('srcset', reviews[x]['profile_photo_url']);
-
-                    // Reviewer rating
-                    const starsDiv = document.querySelectorAll('[data-div="stars"]')[x];
-                    if (starsDiv) {
-                        const { children } = starsDiv;
-
-                        for (let i = 0; i < 5 - reviews[x].rating; i++) {
-                            if (children[i]) {
-                                starsDiv.removeChild(children[i]);
-                            }
+                // place total rating
+                const ratingDiv = document.querySelector('[data-div="rating"]');
+                if (ratingDiv) {
+                    const { children } = ratingDiv;
+                    console.log(children);
+                    //hide(children)
+                    for (let i = 0; i < 5 - res.rating; i++) {
+                        if (children[i]) {
+                            ratingDiv.removeChild(children[i]);
+                        } else {
+                            // No more children to remove
+                            break;
                         }
                     }
                 }
 
-                if ((countedReviews > 3 && window.innerWidth > 991) || window.innerWidth < 991) {
-                    console.log('more than 3 reviews');
-                    // Execute the callback once all reviews are processed
-                    initReviewSlider();
-                } else {
-                    console.log('less than 3 reviews');
-                    document.querySelector('.google-reviews_navigation').classList.add('hide');
+                if (reviews.length > 0) {
+                    // Append review div based on revies total length
+                    appendReview(reviews.length);
+                    console.log(reviews);
+                    for (let x = 0; x < reviews.length; x++) {
+                        countedReviews = countedReviews + 1;
+                        // Reviewer name
+                        const nameElements = document.querySelectorAll('[data-text="name"]');
+                        nameElements[x].textContent = reviews[x]['author_name'];
 
-                    const googleReviewsComponent = document.querySelector('.google-reviews_component');
-                    googleReviewsComponent.style.gap = '32px';
+                        // Review time description
+                        const dateElements = document.querySelectorAll('[data-text="date"]');
+                        dateElements[x].textContent = reviews[x]['relative_time_description'];
+
+                        // Reviewe text
+                        const reviewElements = document.querySelectorAll('[data-text="review"]');
+                        reviewElements[x].textContent = reviews[x]['text'];
+
+                        // Reviewer image
+                        const imageElements = document.querySelectorAll('[data-div="image"]');
+                        imageElements[x].setAttribute('src', reviews[x]['profile_photo_url']);
+                        imageElements[x].setAttribute('srcset', reviews[x]['profile_photo_url']);
+
+                        // Reviewer rating
+                        const starsDiv = document.querySelectorAll('[data-div="stars"]')[x];
+                        if (starsDiv) {
+                            const { children } = starsDiv;
+
+                            for (let i = 0; i < 5 - reviews[x].rating; i++) {
+                                if (children[i]) {
+                                    starsDiv.removeChild(children[i]);
+                                }
+                            }
+                        }
+                    }
+
+                    if ((countedReviews > 3 && window.innerWidth > 991) || window.innerWidth < 991) {
+                        console.log('more than 3 reviews');
+                        // Execute the callback once all reviews are processed
+                        initReviewSlider();
+                    } else {
+                        console.log('less than 3 reviews');
+                        document.querySelector('.google-reviews_navigation').classList.add('hide');
+
+                        const googleReviewsComponent = document.querySelector('.google-reviews_component');
+                        googleReviewsComponent.style.gap = '32px';
+                    }
+                } else {
+                    hide(document.querySelector('#googleReviews'))
                 }
             } else {
                 hide(document.querySelector('#googleReviews'))
+                hide(document.querySelector('[data-lottie="loading"]'));
+                fadeIn(document.querySelector('[data-div="main"]'));
             }
-        } else {
-            hide(document.querySelector('#googleReviews'))
-            hide(document.querySelector('[data-lottie="loading"]'));
-            fadeIn(document.querySelector('[data-div="main"]'));
         }
+        hide(document.querySelector('[data-lottie="loading"]'));
+        fadeIn(document.querySelector('[data-div="main"]'));
     }
 
     function initReviewSlider() {

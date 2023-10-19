@@ -3,15 +3,9 @@ import { getFirstWord } from 'src/modules/getClassName.mjs';
 import { Swiper } from 'swiper';
 import { Navigation } from 'swiper/modules';
 
-/**
- * Function to create a slider for hot tub options.
- *
- * This function will search for all slider components with the attribute 'options-element',
- * initialize them with the Swiper library, and set up the associated navigation arrows.
- */
-export function createHotTubOptionSlider() {
+export function createFeaturedArticleSlider() {
   // Define an identifier for our slider. This will be used to find all elements associated with our slider.
-  const identifier = 'options';
+  const identifier = 'article';
 
   // Find all slider components in the DOM using the identifier.
   const sliders = document.querySelectorAll(`[${identifier}-element='slider-component']`);
@@ -54,16 +48,13 @@ export function createHotTubOptionSlider() {
     const listClass = getFirstWord(list);
     const itemClass = getFirstWord(item[0]);
 
-    if (item.length < 3 && window.innerWidth > 767) {
+    if (item.length < 3) {
       nav.remove();
       return;
     }
 
     // Ensure there are more than 2 items and a wrapper present before proceeding.
-    if (
-      (item.length > 2 && wrapper && window.innerWidth > 767) ||
-      (item.length > 0 && wrapper && window.innerWidth < 768)
-    ) {
+    if (item.length > 2 && wrapper) {
       // Clone each item in the slider. This can be useful for sliders that need to loop seamlessly.
       for (let i = 0; i < item.length; i++) {
         const clonedItem = item[i].cloneNode(true);
@@ -78,7 +69,7 @@ export function createHotTubOptionSlider() {
         // Define basic Swiper settings.
         speed: 650,
         spaceBetween: 16,
-        slidesPerView: 3,
+        slidesPerView: 2,
         loop: true,
         direction: 'horizontal',
         // Use our extracted class names.
@@ -95,7 +86,7 @@ export function createHotTubOptionSlider() {
             slidesPerView: 1, // On small screens, show only 1 slide at a time.
           },
           767: {
-            slidesPerView: 3, // On larger screens, show 3 slides at a time.
+            slidesPerView: 2, // On larger screens, show 3 slides at a time.
           },
         },
       });
