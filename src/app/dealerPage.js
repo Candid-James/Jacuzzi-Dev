@@ -34,6 +34,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // end of custom UI
 
   let countedReviews = 0;
+
   function initMap() {
     const map = new google.maps.Map(document.getElementById('map'), {
       center: { lat: latitude, lng: longitude },
@@ -187,9 +188,11 @@ window.addEventListener('DOMContentLoaded', () => {
         const googleReviewsComponent = document.querySelector('.google-reviews_component');
         googleReviewsComponent.style.gap = '32px';
       }
-      hide(document.querySelector('[data-lottie="loading"]'));
-      fadeIn(document.querySelector('[data-div="main"]'));
+    } else {
+      hide(document.querySelector('#googleReviews'));
     }
+    hide(document.querySelector('[data-lottie="loading"]'));
+    fadeIn(document.querySelector('[data-div="main"]'));
   }
 
   function initReviewSlider() {
