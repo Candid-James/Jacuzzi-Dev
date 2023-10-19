@@ -1,3 +1,4 @@
+import { setPopOutArticles } from 'src/modules/articlePopOut.mjs';
 import { getCookieValue } from 'src/modules/showPricingFunctions.mjs';
 import { styleGridItems } from 'src/modules/styleGrid.js';
 
@@ -12,6 +13,7 @@ if (getCookieValue('show-pricing')) {
   });
 }
 
+setPopOutArticles();
 // Call the function to style the grid items
 styleGridItems();
 

@@ -1,5 +1,4 @@
 // Importing required functions from the 'showPricingFunctions.mjs' module.
-import { contactZipCodeValidation } from 'src/modules/contactFormat.mjs';
 import {
   showPricingTrueTag,
   swapPriceButtons,
@@ -8,15 +7,10 @@ import {
 
 window.addEventListener('DOMContentLoaded', () => {
   // Get all forms that have the 'j-element' attribute set to 'reveal-pricing'.
-  const form = document.querySelectorAll('[j-element="reveal-pricing"]');
+  const form = document.querySelectorAll('[j-pricing="reveal-pricing"]');
 
   // Get all elements that have the 'j-element' attribute set to 'show-pricing-true'.
   const pricingTrueTag = document.querySelectorAll('[j-element="show-pricing-true"]');
-
-  contactZipCodeValidation(
-    document.querySelector('#reveal-submit'),
-    document.querySelector('#Reveal-Pricing-Zip')
-  );
 
   // Get all buttons that have the 'j-element' attribute set to 'pricing-trigger'.
   const triggerButtons = document.querySelectorAll('[j-element="pricing-trigger"]');
@@ -26,7 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Close the modal and clear its content.
   function modalClose() {
-    modalWrapper.classList.remove('is-open');
+    modal.classList.remove('is-open');
     setTimeout(() => {
       contentContainer.firstChild.remove();
     }, 150);
@@ -67,7 +61,7 @@ window.addEventListener('DOMContentLoaded', () => {
   form.forEach((el) => {
     el.addEventListener('submit', () => {
       $.ajax({
-        'j-element': 'reveal-pricing',
+        'j-pricing': 'reveal-pricing',
       });
     });
   });
@@ -80,7 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // If the AJAX request corresponds to the form with 'j-element' set to 'reveal-pricing'
     // and the request was successful, perform the following:
-    if (settings['j-element'] === 'reveal-pricing' && isSuccessful) {
+    if (settings['j-pricing'] === 'reveal-pricing' && isSuccessful) {
       // Update the 'show-pricing' cookie's value to 'true'.
       updateCookie('show-pricing', true);
 

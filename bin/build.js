@@ -11,7 +11,7 @@ const ENTRY_POINTS = ['src/app/*'];
 
 // Config dev serving
 const LIVE_RELOAD = !PRODUCTION;
-const SERVE_PORT = 3000;
+const SERVE_PORT = 4000;
 const SERVE_ORIGIN = `http://localhost:${SERVE_PORT}`;
 
 // Create context

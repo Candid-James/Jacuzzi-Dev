@@ -29,6 +29,16 @@ function fetchAndAppendElement() {
             appendItem.appendChild(clonedElement);
             // Call the fetchAndAppendElement function when the page has finished loading
             featureItemSlider();
+            $.getScript(
+              'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.43/dist/showPricingForm.js'
+            );
+            $.getScript(
+              'https://cdn.jsdelivr.net/npm/@candid-james-battye/jacuzzi-dev@1.2.43/dist/showPricing.js'
+            );
+            const allButton = document.querySelector("[hot-tub='all-tubs']");
+            const rangeItems = document.querySelector("[hot-tub='inner']");
+
+            rangeItems.append(allButton);
           }
         } else {
           console.error('Failed to fetch the featured products.');
