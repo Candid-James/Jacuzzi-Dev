@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.73
+
+### Patch Changes
+
+- 940a8f4: Merging Ezly Branch
+
 ## 1.2.72
 
 ### Patch Changes
