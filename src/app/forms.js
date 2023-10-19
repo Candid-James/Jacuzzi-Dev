@@ -40,16 +40,12 @@ function mirrorFormSubmit(formContainer) {
 
   if (!submitButton) return console.error('no submit button');
 
-  console.log({ salesforceForm, webflowForm, submitButton });
-
   const salesforceInputs = salesforceForm.querySelectorAll('input, select');
   const webflowInputs = webflowForm.querySelectorAll('input, select');
 
   salesforceInputs.forEach((input, index) => {
     input.addEventListener('change', () => {
-      console.log(input.value);
       webflowInputs[index].value = input.value;
-      console.log(webflowInputs[index].value);
     });
   });
 
