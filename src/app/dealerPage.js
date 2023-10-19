@@ -97,9 +97,16 @@ window.addEventListener('DOMContentLoaded', () => {
 
   //using places data from google map
   function placeDetails(res) {
-    let reviews = res.reviews.filter((review) => review.rating >= 3);
-    let openingObj = res.opening_hours;
-    console.log(res);
+    let reviews;
+    if (res.reviews) {
+      reviews = res.reviews.filter((review) => review.rating >= 3);
+    }
+
+    let openingObj;
+    if (res.opening_hours) {
+      openingObj = res.opening_hours;
+    }
+
     // Place Address
     const addressText = document.querySelector('[data-text="address"]');
     const openText = document.querySelector('[data-text="opening"]');
@@ -110,7 +117,7 @@ window.addEventListener('DOMContentLoaded', () => {
     addressText.textContent = res.formatted_address;
     websiteBtn.setAttribute('href', res.website);
     directionBtn.setAttribute('href', res.url);
-    if (openText) {
+    if (openText && openingObj) {
       if (openingObj.isOpen()) {
         openText.textContent = 'open now';
       } else {
@@ -118,10 +125,12 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // Place opening details
-    for (let i = 0; i < openingObj.weekday_text.length; i++) {
-      if (openingHour[i]) {
-        openingHour[i].textContent = openingObj.weekday_text[i];
+    if (openingObj) {
+      // Place opening details
+      for (let i = 0; i < openingObj.weekday_text.length; i++) {
+        if (openingHour[i]) {
+          openingHour[i].textContent = openingObj.weekday_text[i];
+        }
       }
     }
 
@@ -141,7 +150,7 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    if (reviews.length > 0) {
+    if (reviews && reviews.length > 0) {
       // Append review div based on revies total length
       appendReview(reviews.length);
       console.log(reviews);
