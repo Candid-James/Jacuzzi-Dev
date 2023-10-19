@@ -1,5 +1,11 @@
 # @candid-james-batte/jacuzzi-dev
 
+## 1.2.72
+
+### Patch Changes
+
+- 940b87e: If 0 reviews
+
 ## 1.2.71
 
 ### Patch Changes
