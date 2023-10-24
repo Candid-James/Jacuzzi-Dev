@@ -70,7 +70,8 @@ function redirectAttribute(formContainer) {
 
 function errorStates(formContainer) {
   // Get the button element
-  const button = formContainer.querySelector('#submitButton');
+  const sfForm = formContainer.querySelector("[j-element='salesforce-form']");
+  const button = sfForm.querySelector('input[type="submit"]');
 
   // Add event listener to button click
   button.addEventListener('click', () => {

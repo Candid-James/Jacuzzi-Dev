@@ -8,38 +8,41 @@ function getUrlParameter(name) {
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-// Check if gclid and utm_campaign are present in the URL
-var gclidValue = getUrlParameter('gclid');
-var utmCampaignValue = getUrlParameter('utm_campaign');
-
-if (gclidValue) {
-  // Store gclid in a cookie with a 30-day expiration
+function setCookie(cookieName, cookieValue) {
+  console.log('setting value for', cookieName);
+  var expires = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString();
   document.cookie =
-    'gclid=' +
-    gclidValue +
+    encodeURIComponent(cookieName) +
+    '=' +
+    encodeURIComponent(cookieValue) +
     '; expires=' +
-    new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString() +
+    expires +
     '; path=/';
 }
 
+// Check if utm_campaign is present in the URL
+var utmCampaignValue = getUrlParameter('utm_campaign');
+var gclidValue = getUrlParameter('gclid');
+
 if (utmCampaignValue) {
-  // Store utm_campaign in a cookie with a 30-day expiration
-  document.cookie =
-    'utm_campaign=' +
-    utmCampaignValue +
-    '; expires=' +
-    new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toUTCString() +
-    '; path=/';
+  // Store the entire URL as the value of utm_campaign cookie
+  setCookie('utm_campaign', decodeURIComponent(window.location.href));
+}
+
+// Check if gclid and utm_campaign are present in the URL
+
+if (gclidValue) {
+  setCookie('gclid', gclidValue);
 }
 
 // Function to retrieve the value of a cookie by name
 function getCookie(cookieName) {
-  var name = cookieName + '=';
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var cookieArray = decodedCookie.split(';');
-  for (var i = 0; i < cookieArray.length; i++) {
-    var cookie = cookieArray[i].trim();
-    // eslint-disable-next-line eqeqeq
+  let name = cookieName + '=';
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let cookieArray = decodedCookie.split(';');
+  for (let i = 0; i < cookieArray.length; i++) {
+    let cookie = cookieArray[i].trim();
+    // eslint-disable-next-line
     if (cookie.indexOf(name) == 0) {
       return cookie.substring(name.length, cookie.length);
     }
@@ -49,20 +52,23 @@ function getCookie(cookieName) {
 
 // Function to update the hidden fields with cookie values
 function updateHiddenFields() {
-  var gclidField = document.getElementById('GCLID');
-  var utmCampaignField = document.getElementById('UTM_URL__c');
-
+  let gclidField = document.querySelectorAll('[data-id="gclid"]');
+  let utmCampaignField = document.querySelectorAll('[data-id="utm"]');
   // Get the values from cookies
-  var gclidCookie = getCookie('gclid');
-  var utmCampaignCookie = getCookie('utm_campaign');
+  let gclidCookie = getCookie('gclid');
+  let utmCampaignCookie = getCookie('utm_campaign');
 
   // Set the hidden field values
   if (gclidCookie) {
-    gclidField.value = gclidCookie;
+    gclidField.forEach((e) => {
+      e.value = gclidCookie;
+    });
   }
 
   if (utmCampaignCookie) {
-    utmCampaignField.value = utmCampaignCookie;
+    utmCampaignField.forEach((e) => {
+      e.value = utmCampaignCookie;
+    });
   }
 }
 
